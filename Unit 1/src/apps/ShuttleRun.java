@@ -19,7 +19,7 @@ public class ShuttleRun {
 
     public static void main(String[] args) {
 
-        Display.openWorld("maps/shuttlerun.map");
+        Display.openWorld("lib/Jkarel Start Files/maps/shuttlerun.map");
         Display.setSize(13, 10);
         Display.setSpeed(10);
 

@@ -9,7 +9,7 @@ public class Goldmine {
 
     public static void main(String[] args) {
 
-        Display.openWorld("maps/mine.map");
+        Display.openWorld("lib/Jkarel Start Files/maps/mine.map");
         Display.setSize(10, 10);
         Display.setSpeed(10);
 

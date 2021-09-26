@@ -8,7 +8,7 @@ import robots.SuperRobotV2;
 public class ClimbEveryMountain {
 
     public static void main(String[] args) {
-        Display.openWorld("maps/mountain.map");
+        Display.openWorld("lib/Jkarel Start Files/maps/mountain.map");
         Display.setSize(16, 16);
         Display.setSpeed(10);
 

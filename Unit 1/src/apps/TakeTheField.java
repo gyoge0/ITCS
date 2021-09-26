@@ -17,10 +17,10 @@ public class TakeTheField {
 
     public static void main(String[] args) {
 
-        Display.openWorld("maps/arena.map");
+        Display.openWorld("lib/Jkarel Start Files/maps/arena.map");
         Display.setSize(10, 10);
 
-        SuperRobotV2 uselessCoach = new SuperRobotV2(2, 7, Display.EAST);
+        new SuperRobotV2(2, 7, Display.EAST);
 
         /*
          * I spent forever here trying to create a list to hold these guys so I could

@@ -14,7 +14,7 @@ public class ClimberTester {
     }
 
     public static void main(String[] args) {
-        Display.openWorld("maps/climbertester.map");
+        Display.openWorld("lib/Jkarel Start Files/maps/climbertester.map");
         Display.setSize(10, 10);
         Display.setSpeed(3);
 

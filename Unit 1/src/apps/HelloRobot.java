@@ -8,7 +8,7 @@ public class HelloRobot {
 
     public static void main(String[] args) {
 
-        Display.openWorld("maps/first.map");
+        Display.openWorld("lib/Jkarel Start Files/maps/first.map");
         Display.setSize(10, 10);
 
         Robot bob = new Robot();

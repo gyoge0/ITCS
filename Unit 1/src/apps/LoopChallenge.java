@@ -9,7 +9,7 @@ public class LoopChallenge {
 
     public static void main(String[] args) {
 
-        Display.openWorld("maps/loopChallenge.map");
+        Display.openWorld("lib/Jkarel Start Files/maps/loopChallenge.map");
         Display.setSize(10, 10);
         Display.setSpeed(10);
 
