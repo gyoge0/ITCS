@@ -1,5 +1,8 @@
 # Submissions folders
-*/submissions
+/Unit 1/submissions
+
+# Testing classes
+/Unit 1/src/testing
 
 # Compiled class file
 *.class
