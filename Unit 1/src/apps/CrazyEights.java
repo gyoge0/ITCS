@@ -32,7 +32,7 @@ public class CrazyEights {
     }
 
     // Go to the end of the row of beepers
-    public static void task01() {
+    private static void task01() {
         Robot temp = new Robot(1, 1, Display.EAST, 0);
 
         while (temp.nextToABeeper()) {
@@ -46,7 +46,7 @@ public class CrazyEights {
     }
 
     // Go to the beeper
-    public static void task02() {
+    private static void task02() {
         Robot temp = new Robot(1, 2, Display.EAST, 0);
 
         while (!temp.nextToABeeper()) {
@@ -55,7 +55,7 @@ public class CrazyEights {
     }
 
     // Go to the wall
-    public static void task03() {
+    private static void task03() {
         Robot temp = new Robot(1, 3, Display.EAST, 0);
 
         while (temp.frontIsClear()) {
@@ -64,7 +64,7 @@ public class CrazyEights {
     }
 
     // Go to the wall, pick up all the beepers (max one per pile)
-    public static void task04() {
+    private static void task04() {
         Robot temp = new Robot(1, 4, Display.EAST, 0);
 
         while (temp.frontIsClear()) {
@@ -82,7 +82,7 @@ public class CrazyEights {
     }
 
     // Go to the wall, pick up all the beepers
-    public static void task05() {
+    private static void task05() {
         Robot temp = new Robot(1, 5, Display.EAST, 0);
 
         while (temp.frontIsClear()) {
@@ -100,7 +100,7 @@ public class CrazyEights {
     }
 
     // Go to the end of the row of beepers, there is one gap exactly one beeper wide
-    public static void task06() {
+    private static void task06() {
         Robot temp = new Robot(1, 6, Display.EAST, 0);
 
         boolean passedgap = false;
@@ -125,7 +125,7 @@ public class CrazyEights {
 
     // Go to the beeper or the wall. Count and report the number of steps robot
     // took.
-    public static void task07() {
+    private static void task07() {
         Robot temp = new Robot(1, 7, Display.EAST, 0);
 
         int spaces = 0;
@@ -138,7 +138,7 @@ public class CrazyEights {
     }
 
     // Go until you are next to another robot, then put all your beepers down.
-    public static void task08() {
+    private static void task08() {
         int beepers = (int) (Math.random() * 21); // creates a random number between 0 and 20
         Robot temp = new Robot(1, 8, Display.EAST, beepers);
 

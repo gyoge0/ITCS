@@ -7,7 +7,7 @@ import robots.Racer;
 
 public class ShuttleRun {
 
-    public static void runTheRace(Racer racer) {
+    private static void runTheRace(Racer racer) {
 
         racer.shuttle(3, 5);
         racer.shuttle(5, 2);

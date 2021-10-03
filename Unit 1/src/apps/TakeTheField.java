@@ -7,7 +7,7 @@ import robots.SuperRobot;
 
 public class TakeTheField {
 
-    public static void enterField(SuperRobot player) {
+    private static void enterField(SuperRobot player) {
 
         player.moveX(4);
         player.turnRight();

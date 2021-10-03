@@ -61,7 +61,7 @@ public class MakePyramid2 {
    }
 
    // Prints the message to a dialog box
-   public static void printFinishMessage(String message) {
+   private static void printFinishMessage(String message) {
       JOptionPane.showMessageDialog(null, message);
    }
 

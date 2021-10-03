@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class NavigateMaze {
 
-    public static final String[] choices = { "Move", "Go Left", "Go Right", "Turn Around", "Quit" };
+    private static final String[] choices = { "Move", "Go Left", "Go Right", "Turn Around", "Quit" };
 
     public static void main(String[] args) {
 
@@ -26,7 +26,7 @@ public class NavigateMaze {
     }
 
     // The robot will move through the map until it gets to the beeper
-    public static void navigateMaze(Athlete temp) {
+    private static void navigateMaze(Athlete temp) {
 
         while (!temp.nextToABeeper()) {
             chooseNextAction(temp);
@@ -35,7 +35,7 @@ public class NavigateMaze {
     }
 
     // Moves the robot based upon the next action chosen.
-    public static void chooseNextAction(Athlete temp) {
+    private static void chooseNextAction(Athlete temp) {
 
         String mapChoice = (String) JOptionPane.showInputDialog(null, "Choose an action.", "Maze Choices",
                 JOptionPane.PLAIN_MESSAGE, null, choices, choices[0]);
@@ -74,7 +74,7 @@ public class NavigateMaze {
 
     }
 
-    public static void printFinishedMessage(String message) {
+    private static void printFinishedMessage(String message) {
 
         JOptionPane.showMessageDialog(null, message);
     }

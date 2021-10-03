@@ -7,7 +7,7 @@ import robots.MultiTasker;
 
 public class MakePyramid3 {
     // The Multitasker will make column of beepers numBeepers high
-    public static void goUp(MultiTasker worker, int numBeepers) {
+    private static void goUp(MultiTasker worker, int numBeepers) {
         worker.turnLeft();
         for (int i = 0; i < numBeepers; i++) {
             worker.dropAndMove();
@@ -15,7 +15,7 @@ public class MakePyramid3 {
 
     }
 
-    public static void goBack(MultiTasker worker, int numBeepers) {
+    private static void goBack(MultiTasker worker, int numBeepers) {
         worker.turnAround();
         for (int i = 0; i < numBeepers; i++) {
             worker.move();
@@ -23,7 +23,7 @@ public class MakePyramid3 {
         worker.turnLeft();
     }
 
-    public static void moveOver(MultiTasker worker) {
+    private static void moveOver(MultiTasker worker) {
         worker.move();
     }
 

@@ -25,7 +25,7 @@ public class MakePyramid4 {
     }
 
     // Prompts and returns the number of columns to build
-    public static int getNumColumns() {
+    private static int getNumColumns() {
 
         String value = JOptionPane.showInputDialog("Enter the number of columns for the pyramid");
 
@@ -34,7 +34,7 @@ public class MakePyramid4 {
     }
 
     // Creates a pyramid with a MultiTasker robot numColumns high
-    public static void createPyramid(MultiTasker temp, int numColumns) {
+    private static void createPyramid(MultiTasker temp, int numColumns) {
 
         for (int i = 1; i <= numColumns; i++) {
             goUp(temp, i);
@@ -43,14 +43,14 @@ public class MakePyramid4 {
         }
     }
 
-    public static void goUp(MultiTasker worker, int numBeepers) {
+    private static void goUp(MultiTasker worker, int numBeepers) {
         for (int i = 0; i < numBeepers; i++) {
             worker.dropAndMove();
         }
 
     }
 
-    public static void goBack(MultiTasker worker, int numBeepers) {
+    private static void goBack(MultiTasker worker, int numBeepers) {
         worker.turnAround();
         for (int i = 0; i < numBeepers; i++) {
             worker.move();
@@ -58,12 +58,12 @@ public class MakePyramid4 {
         worker.turnLeft();
     }
 
-    public static void moveOver(MultiTasker worker) {
+    private static void moveOver(MultiTasker worker) {
         worker.move();
         worker.turnLeft();
     }
 
-    public static void printFinishMessage(String message) {
+    private static void printFinishMessage(String message) {
 
         JOptionPane.showMessageDialog(null, message);
     }
