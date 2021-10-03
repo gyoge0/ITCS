@@ -3,7 +3,7 @@ package apps;
 
 import edu.fcps.karel2.Display;
 
-import robots.SuperRobotV2;
+import robots.SuperClimber;
 
 public class ClimbEveryMountain {
 
@@ -12,8 +12,8 @@ public class ClimbEveryMountain {
         Display.setSize(16, 16);
         Display.setSpeed(10);
 
-        SuperRobotV2 asdf = new SuperRobotV2(8, 1, Display.EAST, 1);
-        SuperRobotV2 qwer = new SuperRobotV2(8, 1, Display.EAST, 0);
+        SuperClimber asdf = new SuperClimber(8, 1, Display.EAST, 1);
+        SuperClimber qwer = new SuperClimber(8, 1, Display.EAST, 0);
 
         // Make base camp
         asdf.putBeeper();

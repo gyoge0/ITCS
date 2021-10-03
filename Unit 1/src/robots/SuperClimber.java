@@ -1,32 +1,30 @@
-// Yogesh Thambidurai ITCS
 package robots;
 
 import edu.fcps.karel2.Display;
 
-public class SuperRobotV2 extends SuperRobot {
-    // V2 now implements climbing right and left
+public class SuperClimber extends Athlete {
 
     /*
      * Constructors
      */
 
-    public SuperRobotV2() {
+    public SuperClimber() {
         super(1, 1, Display.NORTH, Display.INFINITY);
     }
 
-    public SuperRobotV2(int dir) {
+    public SuperClimber(int dir) {
         super(0, 0, dir, Display.INFINITY);
     }
 
-    public SuperRobotV2(int x, int y) {
+    public SuperClimber(int x, int y) {
         super(x, y, Display.NORTH, Display.INFINITY);
     }
 
-    public SuperRobotV2(int x, int y, int dir) {
+    public SuperClimber(int x, int y, int dir) {
         super(x, y, dir, Display.INFINITY);
     }
 
-    public SuperRobotV2(int x, int y, int dir, int beepers) {
+    public SuperClimber(int x, int y, int dir, int beepers) {
         super(x, y, dir, beepers);
     }
 
@@ -47,30 +45,35 @@ public class SuperRobotV2 extends SuperRobot {
         }
     }
 
-    void climbRight(int untilX) {
+    private void climbRight(int untilX) {
         /*
          * Climb to the right
          * 
          * Assuming robot is facing right, reach untilX, head to base at untilX, and
          * then face right
          */
-        while (!(x == untilX)) {
+        while (x != untilX) {
 
             if (rightIsClear()) {
+
                 do {
                     turnRight();
                     move();
                     turnLeft();
                 } while (!rightIsClear());
+
             } else if (leftIsClear() && frontIsClear()) {
                 // Start going down
+
                 move();
                 turnRight();
                 while (frontIsClear()) {
                     move();
                 }
                 turnLeft();
+
             } else if (leftIsClear()) {
+
                 do {
                     turnLeft();
                     move();
@@ -78,21 +81,25 @@ public class SuperRobotV2 extends SuperRobot {
                 } while (!frontIsClear());
 
                 move();
+
             } else if (frontIsClear()) {
+
                 move();
+
             }
 
         }
+
     }
 
-    void climbLeft(int untilX) {
+    private void climbLeft(int untilX) {
         /*
          * Climb to the left
          * 
          * Assuming robot is facing left, reach untilX, head to base at untilX, and then
          * face left
          */
-        while (!(x == untilX)) {
+        while (x != untilX) {
 
             if (leftIsClear()) {
                 do {
