@@ -15,24 +15,24 @@ public class CrazyEightMore {
         Display.setSize(10, 10);
         Display.setSpeed(10);
 
-        task_09(); // put down 5 different piles with 4 beepers in each pile. Use definte loops
-        task_10(); // fill in the gaps with a beeper and stop when you reach a wall
-        task_11(); // As long as there is a wall to your right, put down one beeper at each step
-        task_12(); // go until there is a wall to your right and you are standing on a beeper
+        task09(); // put down 5 different piles with 4 beepers in each pile. Use definte loops
+        task10(); // fill in the gaps with a beeper and stop when you reach a wall
+        task11(); // As long as there is a wall to your right, put down one beeper at each step
+        task12(); // go until there is a wall to your right and you are standing on a beeper
 
-        task_13(); // Go to the wall. Only pick up 1 beeper in each pile, if there is a pile.
-        task_14(); // Go to the beeper. Count and print out the number of walls you pass.
-        task_15(); // Go to the wall. Pick up all the beepers (max 1 per pile) and put down a
+        task13(); // Go to the wall. Only pick up 1 beeper in each pile, if there is a pile.
+        task14(); // Go to the beeper. Count and print out the number of walls you pass.
+        task15(); // Go to the wall. Pick up all the beepers (max 1 per pile) and put down a
                    // beeper in any gap.
 
-        task_16(); // Pick up the row of beepers (max 1 per pile). Then return ONE space before the
+        task16(); // Pick up the row of beepers (max 1 per pile). Then return ONE space before the
                    // original starting position. You may NOT get to the wall, turn around, and go
                    // back one spot.
 
     }
 
     // Put down 5 different piles with 4 beepers in each pile. Use definte loops
-    public static void task_09() {
+    public static void task09() {
         Robot temp = new Robot(1, 1, Display.EAST, 20);
 
         for (int i = 0; i < 5; i++) {
@@ -47,7 +47,7 @@ public class CrazyEightMore {
     }
 
     // Fill in the gaps with a beeper and stop when you reach a wall
-    public static void task_10() {
+    public static void task10() {
         Robot temp = new Robot(1, 2, Display.EAST, Display.INFINITY);
 
         while (temp.frontIsClear()) {
@@ -62,7 +62,7 @@ public class CrazyEightMore {
     }
 
     // As long as there is a wall to your right, put down one beeper at each step
-    public static void task_11() {
+    public static void task11() {
         Robot temp = new Robot(1, 3, Display.EAST, Display.INFINITY);
 
         while (!temp.rightIsClear()) {
@@ -75,7 +75,7 @@ public class CrazyEightMore {
     }
 
     // Go until there is a wall to your right and you are standing on a beeper
-    public static void task_12() {
+    public static void task12() {
         Robot temp = new Robot(1, 4, Display.EAST, 0);
 
         while (!(!temp.rightIsClear() && temp.nextToABeeper())) {
@@ -84,7 +84,7 @@ public class CrazyEightMore {
     }
 
     // Go to the wall. Only pick up 1 beeper in each pile, if there is a pile.
-    public static void task_13() {
+    public static void task13() {
         Robot temp = new Robot(1, 5, Display.EAST, 0);
 
         while (temp.frontIsClear()) {
@@ -101,7 +101,7 @@ public class CrazyEightMore {
     }
 
     // Go to the beeper. Count and print out the number of walls you pass.
-    public static void task_14() {
+    public static void task14() {
         Robot temp = new Robot(1, 6, Display.EAST, 0);
 
         int count = 0;
@@ -120,7 +120,7 @@ public class CrazyEightMore {
 
     // Go to the wall. Pick up all the beepers (max 1 per pile) and put down a
     // beeper in any gap.
-    public static void task_15() {
+    public static void task15() {
         Robot temp = new Robot(1, 7, Display.EAST, Display.INFINITY);
 
         while (temp.frontIsClear()) {
@@ -143,7 +143,7 @@ public class CrazyEightMore {
     // Pick up the row of beepers (max 1 per pile). Then return ONE space before the
     // original starting position. You may NOT get to the wall, turn around, and go
     // back one spot.
-    public static void task_16() {
+    public static void task16() {
         Robot temp = new Robot(1, 8, Display.EAST, 0);
 
         int spaces = 0;
