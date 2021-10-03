@@ -117,4 +117,19 @@ public class SuperRobot extends MultiTasker {
         }
 
     }
+
+    public void moveXgrabXAndBack(int x, int amount) {
+        for (int i = 0; i < x; i++) {
+            move();
+        }
+        for (int i = 0; i < amount; i++) {
+            pickBeeper();
+        }
+        turnAround();
+        for (int i = 0; i < x; i++) {
+            move();
+        }
+
+    }
+
 }
