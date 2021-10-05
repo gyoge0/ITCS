@@ -43,6 +43,7 @@ public class CrazyEights {
         temp.move();
         temp.turnLeft();
         temp.turnLeft();
+
     }
 
     // Go to the beeper
@@ -52,6 +53,7 @@ public class CrazyEights {
         while (!temp.nextToABeeper()) {
             temp.move();
         }
+
     }
 
     // Go to the wall
@@ -61,6 +63,7 @@ public class CrazyEights {
         while (temp.frontIsClear()) {
             temp.move();
         }
+
     }
 
     // Go to the wall, pick up all the beepers (max one per pile)
@@ -121,6 +124,7 @@ public class CrazyEights {
         temp.move();
         temp.turnLeft();
         temp.turnLeft();
+
     }
 
     // Go to the beeper or the wall. Count and report the number of steps robot
@@ -135,6 +139,7 @@ public class CrazyEights {
             spaces++;
         }
         System.out.println("I moved " + spaces + " spaces.");
+
     }
 
     // Go until you are next to another robot, then put all your beepers down.

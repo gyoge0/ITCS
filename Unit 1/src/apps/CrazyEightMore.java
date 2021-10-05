@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 public class CrazyEightMore {
     public static void main(String[] args) {
+
         String[] choices = { "eightMore1", "eightMore2", "eightMore3", "eightMore4" };
         String filename = (String) JOptionPane.showInputDialog(null, "Choose a map.", "Map Choices",
                 JOptionPane.PLAIN_MESSAGE, null, choices, choices[0]);
@@ -23,11 +24,11 @@ public class CrazyEightMore {
         task13(); // Go to the wall. Only pick up 1 beeper in each pile, if there is a pile.
         task14(); // Go to the beeper. Count and print out the number of walls you pass.
         task15(); // Go to the wall. Pick up all the beepers (max 1 per pile) and put down a
-                   // beeper in any gap.
+                  // beeper in any gap.
 
         task16(); // Pick up the row of beepers (max 1 per pile). Then return ONE space before the
-                   // original starting position. You may NOT get to the wall, turn around, and go
-                   // back one spot.
+                  // original starting position. You may NOT get to the wall, turn around, and go
+                  // back one spot.
 
     }
 
@@ -59,6 +60,7 @@ public class CrazyEightMore {
         if (!temp.nextToABeeper()) {
             temp.putBeeper();
         }
+
     }
 
     // As long as there is a wall to your right, put down one beeper at each step
@@ -81,6 +83,7 @@ public class CrazyEightMore {
         while (!(!temp.rightIsClear() && temp.nextToABeeper())) {
             temp.move();
         }
+
     }
 
     // Go to the wall. Only pick up 1 beeper in each pile, if there is a pile.
@@ -98,6 +101,7 @@ public class CrazyEightMore {
         if (temp.nextToABeeper()) {
             temp.pickBeeper();
         }
+
     }
 
     // Go to the beeper. Count and print out the number of walls you pass.
@@ -116,6 +120,7 @@ public class CrazyEightMore {
         }
 
         System.out.println("I passed " + count + " walls.");
+
     }
 
     // Go to the wall. Pick up all the beepers (max 1 per pile) and put down a
@@ -138,6 +143,7 @@ public class CrazyEightMore {
         } else {
             temp.putBeeper();
         }
+
     }
 
     // Pick up the row of beepers (max 1 per pile). Then return ONE space before the
@@ -158,5 +164,7 @@ public class CrazyEightMore {
         for (int i = 0; i < spaces - 1; i++) {
             temp.move();
         }
+
     }
+
 }
