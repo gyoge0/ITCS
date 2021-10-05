@@ -5,6 +5,8 @@ import edu.fcps.karel2.Display;
 
 public class SuperRobot extends MultiTasker {
 
+    private String name = "SuperRobot";
+
     /*
      * Constructors
      */
@@ -17,21 +19,50 @@ public class SuperRobot extends MultiTasker {
         super(0, 0, dir, Display.INFINITY);
     }
 
+    public SuperRobot(String inputName) {
+        super(1, 1, Display.NORTH, Display.INFINITY);
+        name = inputName;
+    }
+
+    public SuperRobot(int dir, String inputName) {
+        super(0, 0, dir, Display.INFINITY);
+        name = inputName;
+    }
+
     public SuperRobot(int x, int y) {
         super(x, y, Display.NORTH, Display.INFINITY);
+    }
+
+    public SuperRobot(int x, int y, String inputName) {
+        super(x, y, Display.NORTH, Display.INFINITY);
+        name = inputName;
     }
 
     public SuperRobot(int x, int y, int dir) {
         super(x, y, dir, Display.INFINITY);
     }
 
+    public SuperRobot(int x, int y, int dir, String inputName) {
+        super(x, y, dir, Display.INFINITY);
+        name = inputName;
+    }
+
     public SuperRobot(int x, int y, int dir, int beepers) {
         super(x, y, dir, beepers);
+    }
+
+    public SuperRobot(int x, int y, int dir, int beepers, String inputName) {
+        super(x, y, dir, beepers);
+        name = inputName;
     }
 
     /*
      * Methods
      */
+
+    public String getName() {
+        return name;
+    }
 
     public void teleport(int teleportX, int teleportY) {
         /*
