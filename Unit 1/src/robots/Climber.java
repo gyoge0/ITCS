@@ -37,12 +37,11 @@ public class Climber extends Athlete {
 
     // Climber is facing right and moves down one level and finishes facing right
     public void climbDownRight() {
-        turnAround();
-        move();
-        turnLeft();
-        move();
         move();
         turnRight();
+        move();
+        move();
+        turnLeft();
     }
 
     // Climber is facing left and moves down one level and finishes facing right
