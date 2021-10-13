@@ -1,4 +1,4 @@
-// Mountain.java           ITCS
+// Yogesh Thambidurai ITCS
 
 package apps;
 
@@ -6,6 +6,7 @@ import robots.Climber;
 
 public class Mountain {
 
+    // Utility class; Shouldn't be instantiated.
     private Mountain() {
         throw new IllegalStateException("Utility Class");
     }
