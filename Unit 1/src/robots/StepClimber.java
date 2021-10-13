@@ -18,8 +18,6 @@ public class StepClimber extends Climber {
      * Methods
      */
 
-    // TODO: Remove @Override
-
     @Override
     public void climbUpRight() {
         turnLeft();
