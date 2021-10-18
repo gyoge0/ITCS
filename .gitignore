@@ -4,6 +4,9 @@
 # Testing classes
 /Unit 1/src/testing
 
+# Finch
+/Finch
+
 # Compiled class file
 *.class
 
