@@ -6,8 +6,6 @@ public class BoxTopper extends Racer {
         super(y);
     }
 
-    // TODO: remove override
-
     // Facing east
     @Override
     public void jumpRight() {
