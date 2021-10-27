@@ -48,60 +48,27 @@ public class Calculator2 {
 
     }
 
+    // quadratic solver
+    // given a, b, and c as doubles, print the 2 roots
     private static void quadraticSolver(double a, double b, double c) {
-        System.out.println("For the quadratic equation: " + a + "x^2 + " + b + "x + " + c);
-        // I have no idea why, but the sign of the root is always inverted.
-        // I spent forever figuring out why and still don't know so I'm just going to
-        // multiply by -1 for now.
-        System.out.println("The first root is: " + (-1 * ((-b + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a))));
-        System.out.println("The second root is: " + (-1 * (-b - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a)));
+        double root1 = (-b + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+        double root2 = (-b - Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+        System.out.println("\nQuadratic Solver\n");
+        System.out.println("Root 1: " + root1);
+        System.out.println("Root 2: " + root2);
     }
 
-    private static void projectileSolver(double vi, double theta) {
-        double vix = vi * Math.cos(Math.toRadians(theta));
-        double viy = vi * Math.sin(Math.toRadians(theta));
-
-        System.out.println("Initial horizontal velocity: " + vix);
-        System.out.println("Initial vertical velocity: " + viy);
-
-        /*
-         * Math behind following:
-         * 
-         * initial: 0 = vi*t + 1/2(-9.8)t^2
-         * 
-         * evaluate 1/2(-9.8) 0 = vi*t - 4.9t^2
-         * 
-         * flip equation: vi*t - 4.9t^2 = 0
-         * 
-         * rearrange terms and add in constant: -4.9t^2 + vi*t + 0 = 0
-         * 
-         * Quadratic!
-         * 
-         * add 4.9t^2 to both sides: vi*t = 4.9t^2
-         * 
-         * divide both sides by t: vi = 4.9t
-         * 
-         * divide both sides by 4.9 and flip equation:
-         * 
-         * t = vi/4.9
-         */
-
-        double t = vi / 4.9;
-
-        System.out.println("Hang time: " + t);
-
-        /*
-         * Math behind following:
-         * 
-         * x = vixt + 1/2at^2
-         * 
-         * a is 0, last term is removed:
-         * 
-         * x = vixt
-         */
-
-        double x = vix * t;
-
-        System.out.println("x-range: " + x);
+    // projectile solver
+    // given initial velocity and launch angle, print the original horizontal
+    // velocity, orignial vertical velocity, and the time to hit the ground
+    private static void projectileSolver(double v, double angle) {
+        double vx = v * Math.cos(Math.toRadians(angle));
+        double vy = v * Math.sin(Math.toRadians(angle));
+        double t = vy / 9.8;
+        System.out.println("\nProjectile Solver\n");
+        System.out.println("Horizontal Velocity: " + vx);
+        System.out.println("Vertical Velocity: " + vy);
+        System.out.println("Time to Hit Ground: " + t);
     }
+
 }
