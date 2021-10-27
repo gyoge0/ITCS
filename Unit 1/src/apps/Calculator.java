@@ -25,41 +25,59 @@ public class Calculator {
 
     }
 
-    private static double add(double input1, double input2) {
-        return input1 + input2;
+    // add
+    // return the sum of 2 double inputs
+    public static double add(double value1, double value2) {
+        return value1 + value2;
     }
 
-    // Find the difference of input1 and input2
-    private static double subtract(double input1, double input2) {
-        return input1 - input2;
+    // subtract
+    // return the difference of 2 double inputs
+    public static double subtract(double value1, double value2) {
+        return value1 - value2;
     }
 
-    private static double multiply(double i1, double i2) {
-        return i1 * i2;
+    // multiply
+    // return the product of 2 double inputs
+    public static double multiply(double value1, double value2) {
+        return value1 * value2;
     }
 
-    private static double divide(double i1, double i2) {
-        return i1 / i2;
+    // divide
+    // return the quotient of 2 double inputs
+    public static double divide(double value1, double value2) {
+        return value1 / value2;
     }
 
-    private static double findMax(double i1, double i2) {
-        return Math.max(i1, i2);
+    // findMax
+    // return the maximum of 2 double inputs using Math.max
+    public static double findMax(double value1, double value2) {
+        return Math.max(value1, value2);
     }
 
-    private static double findMin(double i1, double i2) {
-        return Math.min(i1, i2);
+    // findMin
+    // return the minimum of 2 double inputs using Math.min
+    public static double findMin(double value1, double value2) {
+        return Math.min(value1, value2);
     }
 
-    private static double squareRoot(double i1) {
-        return Math.sqrt(i1);
+    // squareRoot
+    // return the square root of a double input using Math.sqrt
+    public static double squareRoot(double value1) {
+        return Math.sqrt(value1);
     }
 
-    private static double power(double i1, double i2) {
-        return Math.pow(i1, i2);
+    // power
+    // raise a double input to another double input using Math.pow
+    public static double power(double value1, double value2) {
+        return Math.pow(value1, value2);
     }
 
-    private static double pythagorean(double i1, double i2) {
-        return Math.sqrt(Math.pow(i1, 2) + Math.pow(i2, 2));
+    // pythagorean
+    // given the hypotenuse and one side of a right triangle, return the missing
+    // side using the pythagorean theorem
+    public static double pythagorean(double value1, double value2) {
+        return Math.sqrt(Math.pow(value1, 2) - Math.pow(value2, 2));
     }
 
 }

@@ -24,12 +24,18 @@ public class Calculator2 {
 
     }
 
-    private static double getXComponent(double deg, double h) {
-        return h * Math.cos(Math.toRadians(deg));
+    // get x component
+    // given an angle in degrees and the hypotenuse, return the adjacent side using
+    // trig
+    public static double getXComponent(double angle, double hypotenuse) {
+        return Math.cos(Math.toRadians(angle)) * hypotenuse;
     }
 
-    private static double getYComponent(double deg, double h) {
-        return h * Math.sin(Math.toRadians(deg));
+    // get y component
+    // given an angle in degrees and the hypotenuse, return the opposite side using
+    // trig
+    public static double getYComponent(double angle, double hypotenuse) {
+        return Math.sin(Math.toRadians(angle)) * hypotenuse;
     }
 
     private static void plotLine(double rise, double run) {
