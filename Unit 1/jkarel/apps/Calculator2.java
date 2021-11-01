@@ -66,7 +66,7 @@ public class Calculator2 {
 
     // projectile solver
     // given initial velocity and launch angle, print the original horizontal
-    // velocity, orignial vertical velocity, and the time to hit the ground
+    // velocity, original vertical velocity, and the time to hit the ground
     private static void projectileSolver(double v, double angle) {
         double vx = v * Math.cos(Math.toRadians(angle));
         double vy = v * Math.sin(Math.toRadians(angle));
