@@ -88,10 +88,6 @@ public class BreadCrumbs {
      * makes the coordinates list efficient by removing duplicates.
      */
     private static void makeEfficient() {
-        for (int[] coord : coordinates) {
-            System.out.println("(" + coord[0] + ", " + coord[1] + ")");
-        }
-        System.out.println("--------------");
         int i = 0;
         while (i < coordinates.size()) {
             int lastIdx = lastIndexOf(coordinates.get(i));
