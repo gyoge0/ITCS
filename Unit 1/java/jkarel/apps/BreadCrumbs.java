@@ -91,7 +91,6 @@ public class BreadCrumbs {
         int i = 0;
         while (i < coordinates.size()) {
             int lastIdx = lastIndexOf(coordinates.get(i));
-            System.out.println("i: " + i + " lastIdx: " + lastIdx);
             if (lastIdx != i) {
                 for (int j = 0; j < lastIdx - i; j++) {
                     coordinates.remove(i);
