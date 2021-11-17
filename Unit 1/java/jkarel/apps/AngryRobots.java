@@ -154,8 +154,7 @@ public class AngryRobots {
     }
 
     /**
-     * Declares and instantiates a robot at the given point (x, y) Creates a 50x50
-     * blank coordinate map
+     * Declares and instantiates a robot at the given point (x, y)
      * 
      * @param x the x-coordinate
      * @param y the y-coordinate
@@ -181,9 +180,11 @@ public class AngryRobots {
             vix = calcVix(a);
             viy = calcViy(a);
 
+            double y;
+            double x;
             while (true) {
-                double y = viy * t + 0.5 * ay * Math.pow(t, 2);
-                double x = vix * t;
+                y = viy * t + 0.5 * ay * Math.pow(t, 2);
+                x = vix * t;
                 // If y < 0, break
                 if (y < 0) {
                     break;
@@ -197,6 +198,7 @@ public class AngryRobots {
                 // Increment t
                 t += INCT;
             }
+            System.out.println(a + ", " + x);
 
         }
 
