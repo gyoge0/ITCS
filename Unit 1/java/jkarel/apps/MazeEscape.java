@@ -15,7 +15,7 @@ public class MazeEscape {
         String mapChoice = (String) JOptionPane.showInputDialog(null, "Choose a map.", "Map Choices",
                 JOptionPane.PLAIN_MESSAGE, null, choices, choices[0]);
 
-        Display.openWorld("Unit 1/lib/Jkarel Start Files/maps/" + mapChoice + ".map");
+        Display.openWorld("Unit 1/java/lib/JKarel Start Files/maps/" + mapChoice + ".map");
         Display.setSpeed(10);
 
         pathFind(new Athlete(1, 1, Display.EAST, Display.INFINITY));
