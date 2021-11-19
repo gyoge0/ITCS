@@ -17,6 +17,7 @@ public class Olympics {
                 JOptionPane.PLAIN_MESSAGE, null, mapChoices, mapChoices[0]);
 
         Display.openWorld("Unit 1/java/lib/Jkarel Start Files/maps/" + mapChoice + ".map");
+
         Display.setSize(12, 12);
         Display.setSpeed(10);
 
@@ -25,19 +26,23 @@ public class Olympics {
 
         itsAboutDriveItsAboutPowerWeStayHungryWeDevourPutInTheWorkPutInTheHoursAndTakeWhatsOurs.runLap();
         itsAboutDriveItsAboutPowerWeStayHungryWeDevourPutInTheWorkPutInTheHoursAndTakeWhatsOurs.runLap();
+
         System.out.println(itsAboutDriveItsAboutPowerWeStayHungryWeDevourPutInTheWorkPutInTheHoursAndTakeWhatsOurs
                 .getName() + " took "
                 + itsAboutDriveItsAboutPowerWeStayHungryWeDevourPutInTheWorkPutInTheHoursAndTakeWhatsOurs.getSteps()
                 + " steps.");
+
         System.out.println("Laps: "
                 + itsAboutDriveItsAboutPowerWeStayHungryWeDevourPutInTheWorkPutInTheHoursAndTakeWhatsOurs.getLaps()
                 + "\n");
 
         itsAboutDriveItsAboutPowerWeStayHungryWeDevourPutInTheWorkPutInTheHoursAndTakeWhatsOurs.resetCount();
         itsAboutDriveItsAboutPowerWeStayHungryWeDevourPutInTheWorkPutInTheHoursAndTakeWhatsOurs.warmUp(4);
+
         System.out.println(itsAboutDriveItsAboutPowerWeStayHungryWeDevourPutInTheWorkPutInTheHoursAndTakeWhatsOurs
                 .getName()
                 + " finished warming up while listening to auditory protein, AKA ITS ABOUT DRIVE ITS ABOUT POWER WE STAY HUNGRY WE DEVOUR PUT IN THE WORK PUT IN THE HOURS AND TAKE WHATS HOURS.\n");
+
         System.out.println(
                 "While listening to auditory protein AKA ITS ABOUT DRIVE ITS ABOUT POWER WE STAY HUNGRY WE DEVOUR PUT IN THE WORK PUT IN THE HOURS AND TAKE WHATS HOURS, "
                         + itsAboutDriveItsAboutPowerWeStayHungryWeDevourPutInTheWorkPutInTheHoursAndTakeWhatsOurs
