@@ -11,7 +11,7 @@ public class Olympics {
 
     private static final String[] mapChoices = { "track1", "track2", "track3" };
 
-    public static void main(String[] args) {
+     public static void main(String[] args) {
 
         String mapChoice = (String) JOptionPane.showInputDialog(null, "Choose an map.", "Map Choices",
                 JOptionPane.PLAIN_MESSAGE, null, mapChoices, mapChoices[0]);
