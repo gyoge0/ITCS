@@ -107,9 +107,9 @@ public class AngryRobots {
      * 
      * @return the x-coordinate with the initial x-velocity at the given time
      */
-    private static double calcX(double t) {
-        return vix * t;
-    }
+    // private static double calcX(double t) {
+    //     return vix * t;
+    // }
 
     /**
      * Finds the y-coordinate with the initial y-velocity, at the given time, t.
@@ -118,9 +118,9 @@ public class AngryRobots {
      * 
      * @return the y-coordinate with the initial y-velocity at the given time
      */
-    private static double calcY(double t) {
-        return viy * t + 0.5 * ay * Math.pow(t, 2);
-    }
+    // private static double calcY(double t) {
+    //     return viy * t + 0.5 * ay * Math.pow(t, 2);
+    // }
 
     /**
      * Calculates x and y positions to trace the path of the projectile until it
@@ -159,9 +159,9 @@ public class AngryRobots {
      * @param x the x-coordinate
      * @param y the y-coordinate
      */
-    private static void plotProjectile(double x, double y) {
-        new Robot((int) x, (int) y, Display.SOUTH, Display.INFINITY);
-    }
+    // private static void plotProjectile(double x, double y) {
+    //     new Robot((int) x, (int) y, Display.SOUTH, Display.INFINITY);
+    // }
 
     /**
      * Determines optimal angle for maximum range by testing angles between 0-90 for
