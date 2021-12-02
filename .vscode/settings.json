@@ -6,5 +6,7 @@
     "Unit 1\\lib\\JKarel Start Files\\fcpsKarel9-09.jar",
     "Unit 1\\lib\\JKarel Start Files\\xercesImpl.jar"
   ],
-  "java.project.sourcePaths": ["Unit 1\\java\\jkarel", "Unit 1\\java\\src"]
+  "java.project.sourcePaths": [
+    "Unit 1\\src\\jkarel"
+  ]
 }
