@@ -1,10 +1,13 @@
 // Yogesh Thambidurai ITCS
 
+package frames;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -30,7 +33,7 @@ public class HelloGraphics extends JPanel {
         goon.setFont(new Font("JetBrains Mono", Font.BOLD, 75));
         goon.setColor(Color.BLACK);
 
-        ArrayList<String> words = new ArrayList<String>(Arrays.asList("ITS ABOUT DRIVE", "ITS ABOUT POWER",
+        ArrayList<String> words = new ArrayList<>(Arrays.asList("ITS ABOUT DRIVE", "ITS ABOUT POWER",
                 "WE STAY HUNGRY", "WE DEVOUR", "PUT IN THE WORK", "PUT IN THE HOURS", "AND TAKE WHATS OURS"));
         for (int i = 1; i < words.size(); i++) {
             goon.drawString(words.get(i), 10, (i + 1) * 100);
