@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="fcpsKarel9-09">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/fcpsKarel9-09.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/resources/xercesImpl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/fcpsKarel9-09.jar!/" />
+    </SOURCES>
+  </library>
+</component>
