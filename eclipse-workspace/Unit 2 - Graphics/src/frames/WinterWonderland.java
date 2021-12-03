@@ -2,48 +2,31 @@
 
 package frames;
 
-import objects.*;
+import objects.Rick;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import java.awt.*;
-import java.awt.image.*;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.IIOException;
-import javax.imageio.ImageIO;
 import javax.swing.*;
-
-import org.apache.batik.swing.JSVGCanvas;
 
 public class WinterWonderland extends JPanel {
 
-    private static final int WIDTH = 50;
-    private static final int HEIGHT = 50;
+    private static final int WIDTH = 1000;
+    private static final int HEIGHT = 1000;
 
     @Override
     public void paintComponent(Graphics goon) {
 
-        drawRick(goon, 100, 100);
-    }
+        // Background
+        goon.setColor(new Color(45, 90, 167));
+        goon.fillRect(0, 0, WIDTH, HEIGHT / 2);
 
-    /*
-     * Draw an image of Rick Astley at x and y
-     * 
-     * @param x - The x coordinate of the image
-     * 
-     * @param y - The y coordinate of the image
-     */
-    private void drawRick(Graphics goon, int x, int y) {
-        try {
-            goon.drawImage(ImageIO.read(new File(
-                    "eclipse-workspace\\Unit 2 - Graphics\\assets\\rick.png")), x,
-                    y, null);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        goon.setColor(Color.WHITE);
+        goon.fillRect(0, HEIGHT / 2, WIDTH, HEIGHT / 2);
+
+        new Rick().draw(goon, 100, 100);
+
     }
 
     public static void main(String[] args) {
