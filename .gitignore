@@ -1,8 +1,8 @@
 # Submissions folders
-/Submissions
+/Submissions/
 
-# Testing classes
-/test
+# Testing folders
+/test/
 
 # Compiled class file
 *.class
