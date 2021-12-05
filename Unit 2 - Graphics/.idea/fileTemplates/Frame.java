@@ -18,6 +18,11 @@ public class ${NAME} extends JPanel {
         frame.setVisible(true);
     }
 
+    /**
+     * Paints the panel.
+     *
+     * @param goon The graphics object.
+     */
     @Override
     public void paintComponent(Graphics goon) {
 
