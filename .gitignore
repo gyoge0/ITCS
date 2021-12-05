@@ -2,7 +2,7 @@
 /Submissions
 
 # Testing classes
-test/
+/test
 
 # Compiled class file
 *.class
