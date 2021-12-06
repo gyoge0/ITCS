@@ -14,11 +14,11 @@
   </properties>
 
   <dependencies>
-    <!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-swing -->
     <dependency>
-      <groupId>org.apache.xmlgraphics</groupId>
-      <artifactId>batik-swing</artifactId>
-      <version>1.14</version>
+      <groupId>edu.fcps.karel2</groupId>
+      <artifactId>jkarel</artifactId>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/src/main/resources/lib/fcpsKarel9-09.jar</systemPath>
     </dependency>
   </dependencies>
 
