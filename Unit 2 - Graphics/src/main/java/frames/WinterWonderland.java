@@ -16,6 +16,8 @@ public class WinterWonderland extends JPanel {
     private static final int WIDTH = 1000;
     private static final int HEIGHT = 1000;
 
+    private static final Random random = new Random();
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Goon presents: WinterWonderland by Yogesh Thambidurai");
         frame.setSize(WIDTH, HEIGHT);
@@ -62,9 +64,8 @@ public class WinterWonderland extends JPanel {
      * @param goon   The graphics object.
      * @param x      The x coordinate of the snowflake.
      * @param y      The y coordinate of the snowflake.
-     * @param random The random object to generate random colors.
      */
-    private void drawSnow(Graphics goon, int x, int y, Random random) {
+    private void drawSnow(Graphics goon, int x, int y) {
 
         // Does this count as 55 different colors?
         int color = random.nextInt(55) + 200;
@@ -146,13 +147,11 @@ public class WinterWonderland extends JPanel {
      */
     @Override
     public void paintComponent(Graphics goon) {
-        Random random = new Random();
-
         this.setBackground(goon);
 
         // Snow
         for (int i = 0; i < 500; i++) {
-            this.drawSnow(goon, random.nextInt(WIDTH), random.nextInt(HEIGHT / 2), random);
+            this.drawSnow(goon, random.nextInt(WIDTH), random.nextInt(HEIGHT / 2));
         }
 
         // Rick
