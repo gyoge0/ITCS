@@ -16,7 +16,7 @@ public class WinterWonderland extends JPanel {
     private static final int WIDTH = 1000;
     private static final int HEIGHT = 1000;
 
-    private final Random random = new Random();
+    private static final Random random = new Random();
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Goon presents: WinterWonderland by Yogesh Thambidurai");
