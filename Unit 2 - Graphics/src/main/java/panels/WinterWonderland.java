@@ -1,6 +1,6 @@
 // Yogesh Thambidurai ITCS
 
-package frames;
+package panels;
 
 import java.awt.*;
 import java.awt.geom.*;
@@ -15,6 +15,8 @@ public class WinterWonderland extends JPanel {
 
     private static final int WIDTH = 1000;
     private static final int HEIGHT = 1000;
+
+    private final Random random = new Random();
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Goon presents: WinterWonderland by Yogesh Thambidurai");
@@ -59,15 +61,14 @@ public class WinterWonderland extends JPanel {
     /**
      * Draw a snowflake.
      *
-     * @param goon   The graphics object.
-     * @param x      The x coordinate of the snowflake.
-     * @param y      The y coordinate of the snowflake.
-     * @param random The random object to generate random colors.
+     * @param goon The graphics object.
+     * @param x    The x coordinate of the snowflake.
+     * @param y    The y coordinate of the snowflake.
      */
-    private void drawSnow(Graphics goon, int x, int y, Random random) {
+    private void drawSnow(Graphics goon, int x, int y) {
 
         // Does this count as 55 different colors?
-        int color = random.nextInt(55) + 200;
+        int color = this.random.nextInt(55) + 200;
         goon.setColor(new Color(color, color, color));
 
         goon.drawLine(x - 3, y, x + 3, y);
@@ -146,13 +147,11 @@ public class WinterWonderland extends JPanel {
      */
     @Override
     public void paintComponent(Graphics goon) {
-        Random random = new Random();
-
         this.setBackground(goon);
 
         // Snow
         for (int i = 0; i < 500; i++) {
-            this.drawSnow(goon, random.nextInt(WIDTH), random.nextInt(HEIGHT / 2), random);
+            this.drawSnow(goon, this.random.nextInt(WIDTH), this.random.nextInt(HEIGHT / 2));
         }
 
         // Rick
@@ -163,7 +162,7 @@ public class WinterWonderland extends JPanel {
         for (int i = 0; i < WIDTH; i += 100) {
             new Imposter(
                 i,
-                random.nextInt(HEIGHT / 2 + 110) + (HEIGHT / 2) - 110
+                this.random.nextInt(HEIGHT / 2 + 110) + (HEIGHT / 2) - 110
             ).draw(goon);
         }
 

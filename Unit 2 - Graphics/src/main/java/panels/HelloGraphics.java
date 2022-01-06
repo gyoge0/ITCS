@@ -1,15 +1,11 @@
 // Yogesh Thambidurai ITCS
 
-package frames;
+package panels;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 
 public class HelloGraphics extends JPanel {
 
