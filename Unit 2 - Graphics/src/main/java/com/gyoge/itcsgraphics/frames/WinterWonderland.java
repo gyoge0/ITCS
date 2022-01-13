@@ -1,10 +1,6 @@
 // Yogesh Thambidurai ITCS
 
-<<<<<<< HEAD:Unit 2 - Graphics/src/main/java/com/gyoge/itcsgraphics/frames/WinterWonderland.java
 package com.gyoge.itcsgraphics.frames;
-=======
-package panels;
->>>>>>> origin/main:Unit 2 - Graphics/src/main/java/panels/WinterWonderland.java
 
 import java.awt.*;
 import java.awt.geom.*;
@@ -73,7 +69,7 @@ public class WinterWonderland extends JPanel {
     private void drawSnow(Graphics goon, int x, int y) {
 
         // Does this count as 55 different colors?
-        int color = this.random.nextInt(55) + 200;
+        int color = random.nextInt(55) + 200;
         goon.setColor(new Color(color, color, color));
 
         goon.drawLine(x - 3, y, x + 3, y);
@@ -156,7 +152,7 @@ public class WinterWonderland extends JPanel {
 
         // Snow
         for (int i = 0; i < 500; i++) {
-            this.drawSnow(goon, this.random.nextInt(WIDTH), this.random.nextInt(HEIGHT / 2));
+            this.drawSnow(goon, random.nextInt(WIDTH), random.nextInt(HEIGHT / 2));
         }
 
         // Rick
@@ -167,7 +163,7 @@ public class WinterWonderland extends JPanel {
         for (int i = 0; i < WIDTH; i += 100) {
             new Imposter(
                 i,
-                this.random.nextInt(HEIGHT / 2 + 110) + (HEIGHT / 2) - 110
+                random.nextInt(HEIGHT / 2 + 110) + (HEIGHT / 2) - 110
             ).draw(goon);
         }
 
