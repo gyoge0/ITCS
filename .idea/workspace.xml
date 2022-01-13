@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="958142ff-e5f9-463d-af04-3731ca5f154e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Unit 1 - JKarel/Unit 1 - JKarel.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ITCS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ITCS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +12,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="xw2qva9u" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,10 +39,24 @@
       <option name="presentableId" value="Default" />
       <updated>1638806849313</updated>
       <workItem from="1638806850782" duration="30000" />
+      <workItem from="1641428327241" duration="343000" />
+      <workItem from="1641428732164" duration="6000" />
+      <workItem from="1641428803286" duration="860000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

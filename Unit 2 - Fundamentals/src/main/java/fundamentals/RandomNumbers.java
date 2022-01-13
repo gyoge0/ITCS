@@ -6,12 +6,12 @@ import java.util.Random;
 
 public class RandomNumbers {
 
+    private static final Random random = new Random();
+
+
     private RandomNumbers() {
         throw new IllegalStateException("Utility class");
     }
-
-
-    private static final Random random = new Random();
 
     public static void main(String[] args) {
         diceGame();

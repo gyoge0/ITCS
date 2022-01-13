@@ -2,7 +2,17 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Unit 1 - JKarel/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Unit 1 - JKarel/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/Unit 1 - JKarel/src/test/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Unit 2 - Fundamentals/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Unit 2 - Graphics/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Unit 2 - Graphics/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/Unit 2 - Graphics/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/Unit 2 - Graphics/target" />
+      <excludeFolder url="file://$MODULE_DIR$/Unit 1 - JKarel/out" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
