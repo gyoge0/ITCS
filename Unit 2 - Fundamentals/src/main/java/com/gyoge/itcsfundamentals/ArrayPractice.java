@@ -1,4 +1,4 @@
-package fundamentals;
+package com.gyoge.itcsfundamentals;
 
 
 public class ArrayPractice {
