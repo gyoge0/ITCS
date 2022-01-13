@@ -1,6 +1,6 @@
 // Yogesh Thambidurai ITCS
 
-package frames;
+package com.gyoge.itcsgraphics.frames;
 
 import java.awt.Color;
 import java.awt.Font;

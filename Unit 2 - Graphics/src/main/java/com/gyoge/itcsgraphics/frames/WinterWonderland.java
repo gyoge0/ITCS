@@ -1,15 +1,15 @@
 // Yogesh Thambidurai ITCS
 
-package frames;
+package com.gyoge.itcsgraphics.frames;
 
 import java.awt.*;
 import java.awt.geom.*;
 import java.net.URL;
+import java.util.Objects;
 import java.util.Random;
 import javax.sound.sampled.*;
 import javax.swing.*;
-import objects.Imposter;
-import objects.Rick;
+import com.gyoge.itcsgraphics.objects.*;
 
 public class WinterWonderland extends JPanel {
 
@@ -44,7 +44,7 @@ public class WinterWonderland extends JPanel {
                 .getClass()
                 .getClassLoader()
                 .getResource("sounds/rickroll.wav");
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(Objects.requireNonNull(url));
 
             // Get a sound clip resource.
             Clip clip = AudioSystem.getClip();
@@ -61,10 +61,11 @@ public class WinterWonderland extends JPanel {
     /**
      * Draw a snowflake.
      *
-     * @param goon   The graphics object.
-     * @param x      The x coordinate of the snowflake.
-     * @param y      The y coordinate of the snowflake.
+     * @param goon The graphics object.
+     * @param x    The x coordinate of the snowflake.
+     * @param y    The y coordinate of the snowflake.
      */
+    @SuppressWarnings("DuplicatedCode")
     private void drawSnow(Graphics goon, int x, int y) {
 
         // Does this count as 55 different colors?
