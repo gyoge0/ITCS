@@ -12,6 +12,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Unit 2 - Graphics/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/Unit 2 - Graphics/target" />
       <excludeFolder url="file://$MODULE_DIR$/Unit 1 - JKarel/out" />
+      <excludeFolder url="file://$MODULE_DIR$/Submissions" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

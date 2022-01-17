@@ -1,5 +1,3 @@
 
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-]
--src/main/java/fundamentals/ArrayPractice.java,2\6\26381cca5df42fea6994af893e700571411ab39f
+_
+/src/test/java/com/gyoge/test/ArrayQuizTest.java,f\d\fd2c6fef52a8797ff40823feb94325c39d7ef4a2

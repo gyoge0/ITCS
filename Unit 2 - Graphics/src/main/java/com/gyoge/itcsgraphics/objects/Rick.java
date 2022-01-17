@@ -1,4 +1,4 @@
-package objects;
+package com.gyoge.itcsgraphics.objects;
 
 import java.awt.Color;
 import java.awt.Graphics;

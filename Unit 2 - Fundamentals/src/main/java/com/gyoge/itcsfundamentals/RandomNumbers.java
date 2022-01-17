@@ -1,6 +1,6 @@
 // Yogesh Thambidurai ITCS
 
-package fundamentals;
+package com.gyoge.itcsfundamentals;
 
 import java.util.Random;
 

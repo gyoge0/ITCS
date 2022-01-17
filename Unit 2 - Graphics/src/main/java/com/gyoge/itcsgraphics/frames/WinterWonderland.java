@@ -1,15 +1,15 @@
 // Yogesh Thambidurai ITCS
 
-package panels;
+package com.gyoge.itcsgraphics.frames;
 
 import java.awt.*;
 import java.awt.geom.*;
 import java.net.URL;
+import java.util.Objects;
 import java.util.Random;
 import javax.sound.sampled.*;
 import javax.swing.*;
-import objects.Imposter;
-import objects.Rick;
+import com.gyoge.itcsgraphics.objects.*;
 
 public class WinterWonderland extends JPanel {
 
@@ -44,7 +44,7 @@ public class WinterWonderland extends JPanel {
                 .getClass()
                 .getClassLoader()
                 .getResource("sounds/rickroll.wav");
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(Objects.requireNonNull(url));
 
             // Get a sound clip resource.
             Clip clip = AudioSystem.getClip();
@@ -65,10 +65,11 @@ public class WinterWonderland extends JPanel {
      * @param x    The x coordinate of the snowflake.
      * @param y    The y coordinate of the snowflake.
      */
+    @SuppressWarnings("DuplicatedCode")
     private void drawSnow(Graphics goon, int x, int y) {
 
         // Does this count as 55 different colors?
-        int color = this.random.nextInt(55) + 200;
+        int color = random.nextInt(55) + 200;
         goon.setColor(new Color(color, color, color));
 
         goon.drawLine(x - 3, y, x + 3, y);
@@ -151,7 +152,7 @@ public class WinterWonderland extends JPanel {
 
         // Snow
         for (int i = 0; i < 500; i++) {
-            this.drawSnow(goon, this.random.nextInt(WIDTH), this.random.nextInt(HEIGHT / 2));
+            this.drawSnow(goon, random.nextInt(WIDTH), random.nextInt(HEIGHT / 2));
         }
 
         // Rick
@@ -162,7 +163,7 @@ public class WinterWonderland extends JPanel {
         for (int i = 0; i < WIDTH; i += 100) {
             new Imposter(
                 i,
-                this.random.nextInt(HEIGHT / 2 + 110) + (HEIGHT / 2) - 110
+                random.nextInt(HEIGHT / 2 + 110) + (HEIGHT / 2) - 110
             ).draw(goon);
         }
 
