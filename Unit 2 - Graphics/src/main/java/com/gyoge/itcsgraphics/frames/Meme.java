@@ -14,18 +14,6 @@ public class Meme extends JPanel {
     private final BufferedImage bufferedImage = new BufferedImage(WIDTH, HEIGHT,
         BufferedImage.TYPE_INT_RGB);
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Goon presents: A Meme by Yogesh Thambidurai");
-        frame.setSize(1000, 800);
-        frame.setLocation(0, 0);
-
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-        frame.setContentPane(new Meme());
-        frame.setVisible(true);
-    }
-
-
     /**
      * The constructor to draw stuff onto the buffered image.
      */
@@ -57,6 +45,17 @@ public class Meme extends JPanel {
             Color.BLACK
         );
 
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Goon presents: A Meme by Yogesh Thambidurai");
+        frame.setSize(1000, 800);
+        frame.setLocation(0, 0);
+
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        frame.setContentPane(new Meme());
+        frame.setVisible(true);
     }
 
     /**
@@ -94,6 +93,7 @@ public class Meme extends JPanel {
 
         g2d.setColor(outlineColor);
         g2d.draw(shape);
+
         g2d.setColor(textColor);
         g2d.fill(shape);
     }
