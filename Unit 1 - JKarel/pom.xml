@@ -14,11 +14,19 @@
   </properties>
 
   <dependencies>
+    <!-- https://github.com/ComputerDruid/karel -->
     <dependency>
       <groupId>edu.fcps.karel2</groupId>
-      <artifactId>jkarel</artifactId>
+      <artifactId>fcpsKarel</artifactId>
+      <version>9</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/src/main/resources/lib/fcpsKarel9-09.jar</systemPath>
+      <systemPath>${basedir}/lib/fcpsKarel9-09.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+      <version>2.12.1</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 

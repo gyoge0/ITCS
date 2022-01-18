@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="958142ff-e5f9-463d-af04-3731ca5f154e" name="Changes" comment="Config stuff">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="958142ff-e5f9-463d-af04-3731ca5f154e" name="Changes" comment="Config + gitignore">
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/0/3/0312b20cb7ab7069c90927b058101eefd157d5a2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unit 1 - JKarel/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Unit 1 - JKarel/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unit 1 - JKarel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Unit 1 - JKarel/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unit 1 - JKarel/src/main/java/apps/AngryRobots.java" beforeDir="false" afterPath="$PROJECT_DIR$/Unit 1 - JKarel/src/main/java/apps/AngryRobots.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,6 +39,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectId" id="21v1fULYhwXkoG1NvBQrIdUvayt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,7 +54,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
@@ -63,7 +76,8 @@
       <workItem from="1641428803286" duration="860000" />
       <workItem from="1641778958545" duration="314000" />
       <workItem from="1642430256248" duration="425000" />
-      <workItem from="1642431270144" duration="329000" />
+      <workItem from="1642431270144" duration="349000" />
+      <workItem from="1642534979291" duration="75000" />
     </task>
     <task id="LOCAL-00001" summary="Fuck">
       <created>1641779018365</created>
@@ -100,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642430937517</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Config + gitignore">
+      <created>1642431611359</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642431611359</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,7 +142,8 @@
     <MESSAGE value="Fuck" />
     <MESSAGE value="Format" />
     <MESSAGE value="Config stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Config stuff" />
+    <MESSAGE value="Config + gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Config + gitignore" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
