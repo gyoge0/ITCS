@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="958142ff-e5f9-463d-af04-3731ca5f154e" name="Changes" comment="File rearrange/delete" />
+    <list default="true" id="958142ff-e5f9-463d-af04-3731ca5f154e" name="Changes" comment="File rearrange/delete">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +31,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -42,6 +46,9 @@
       <workItem from="1641428732164" duration="6000" />
       <workItem from="1641428803286" duration="860000" />
       <workItem from="1642090660391" duration="250000" />
+      <workItem from="1642538547870" duration="227000" />
+      <workItem from="1642538849323" duration="167000" />
+      <workItem from="1643039068993" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="Config stuff">
       <created>1642090883887</created>
