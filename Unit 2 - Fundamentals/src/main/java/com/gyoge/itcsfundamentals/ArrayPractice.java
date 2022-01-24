@@ -9,7 +9,7 @@ public class ArrayPractice {
 
     /** Print out an int array. */
     public static void printArray(int[] nums) {
-        for (Object num : nums) {
+        for (int num : nums) {
             System.out.print(num + ", ");
         }
         System.out.print("\n");
