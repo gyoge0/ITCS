@@ -5,27 +5,33 @@ import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
 
+/**
+ * Spaceship
+ * <p>
+ * A spaceship with a rock in it.
+ *
+ * @author Yogesh Thambidurai
+ * @see com.gyoge.itcsgraphics.animators.SpaceshipAnimator
+ */
 public class Spaceship implements Drawable {
 
     private int x = 0;
     private int y = 0;
-    public static int UPPER_BOUND = -5;
-
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
 
     public int getX() {
         return x;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
     public int getY() {
         return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     public void draw(Graphics goon) {
@@ -39,7 +45,7 @@ public class Spaceship implements Drawable {
         goon.drawImage(
             new ImageIcon("src/main/resources/images/rock.jpg").getImage(),
             x + 5,
-            y+5,
+            y + 5,
             40,
             40,
             null

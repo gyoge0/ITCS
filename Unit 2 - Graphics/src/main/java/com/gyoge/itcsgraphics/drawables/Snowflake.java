@@ -1,25 +1,25 @@
 package com.gyoge.itcsgraphics.drawables;
 
-import java.awt.*;
-
 import java.util.Random;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Polygon;
+
+/**
+ * A simple snowflake.
+ *
+ * @author Yogesh Thambidurai
+ * @see com.gyoge.itcsgraphics.animators.SnowflakeAnimator
+ */
 public class Snowflake implements Drawable {
 
+    private static final Random random = new Random();
     private int x;
     private int y;
-    private static final Random random = new Random();
 
     public Snowflake(int x, int y) {
         this.x = x;
-        this.y = y;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
         this.y = y;
     }
 
@@ -27,8 +27,16 @@ public class Snowflake implements Drawable {
         return this.x;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
     public int getY() {
         return this.y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     @SuppressWarnings("DuplicatedCode")

@@ -9,36 +9,37 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import javax.swing.WindowConstants;
 
+/**
+ * Animation
+ * <p>
+ * A superclass for all animations to inherit from. Provides methods to partially set up the
+ * animation, but requires overriding of some methods.
+ *
+ * @author Yogesh Thambidurai
+ */
 public class Animation extends JPanel {
 
+    /** Default width for animations. */
+    @SuppressWarnings("unused")
     public static final int WIDTH = 400;
+    /** Default height for animations. */
+    @SuppressWarnings("unused")
     public static final int HEIGHT = 400;
-
+    /** Default fps/tick rate for animations. */
+    protected static final int FPS = 60;
+    /** BufferedImage to draw objects on. */
     protected BufferedImage bufferedImage;
+    /** Graphics object to draw objects with. */
     protected Graphics goon;
-    protected String shownName = "Animation";
+    /** Default name shown in title bar. */
+    protected String shownName = "An Animation";
     /** List of animators for each object drawn. */
     protected Animator[] animators;
     /** Params with info for each animator. */
     protected HashMap<String, Object> params;
-
-
-    /**
-     * Start animation.
-     */
-    public Animation() {
-
-        this.setUp();
-
-        //set up and start the Timer
-        Timer timer = new Timer(16, new TimerListener());
-        timer.start();
-    }
 
     /**
      * Set up animators. Should be overridden by subclasses.
@@ -59,28 +60,16 @@ public class Animation extends JPanel {
         }
     }
 
-    /**
-     * Timer for the animation.
-     */
-    private class TimerListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            tick();
-            repaint();
-        }
-
-    }
-
-    protected void setShownName(String name) {
-        this.shownName = name;
-    }
-
     /** Getter for name. */
     public String getShownName() {
         return this.shownName;
     }
 
+    /** Set name. Mostly used in setUp() boilerplate. */
+    @SuppressWarnings("SameParameterValue")
+    protected void setShownName(String name) {
+        this.shownName = name;
+    }
 
     /**
      * Paint the animation.
@@ -92,7 +81,23 @@ public class Animation extends JPanel {
         goon.drawImage(bufferedImage, 0, 0, getWidth(), getHeight(), null);
     }
 
+    /**
+     * Timer for the animation.
+     */
+    protected class TimerListener implements ActionListener {
 
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            tick();
+            repaint();
+        }
+
+        public void startTimer() {
+            Timer timer = new Timer(1000 / FPS, this);
+            timer.start();
+        }
+
+    }
 
 }
 
