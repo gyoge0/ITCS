@@ -1,14 +1,14 @@
-package com.gyoge.itcsgraphics.objects;
+package com.gyoge.itcsgraphics.drawables;
 
 import java.awt.*;
 
 /**
  * Class that draws an imposter from Among Us.
  */
-public class Imposter {
+public class Imposter implements Drawable {
 
-    private final int x;
-    private final int y;
+    private int x;
+    private int y;
 
     /**
      * Constructor.
@@ -19,6 +19,23 @@ public class Imposter {
     public Imposter(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getX() {
+        return this.x;
+    }
+
+    public int getY() {
+        return this.y;
     }
 
     /**

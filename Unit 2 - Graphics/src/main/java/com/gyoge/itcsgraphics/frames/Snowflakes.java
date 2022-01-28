@@ -3,7 +3,7 @@ package com.gyoge.itcsgraphics.frames;
 import java.awt.*;
 import java.util.Random;
 import javax.swing.*;
-import com.gyoge.itcsgraphics.objects.Snowflake;
+import com.gyoge.itcsgraphics.drawables.Snowflake;
 
 public class Snowflakes extends JPanel {
 

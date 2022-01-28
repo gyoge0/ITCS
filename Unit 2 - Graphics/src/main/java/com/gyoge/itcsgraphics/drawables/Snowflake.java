@@ -1,18 +1,34 @@
-package com.gyoge.itcsgraphics.objects;
+package com.gyoge.itcsgraphics.drawables;
 
 import java.awt.*;
+
 import java.util.Random;
 
-@SuppressWarnings("ClassCanBeRecord")
-public class Snowflake {
+public class Snowflake implements Drawable {
 
-    private final int x;
-    private final int y;
+    private int x;
+    private int y;
     private static final Random random = new Random();
 
     public Snowflake(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getX() {
+        return this.x;
+    }
+
+    public int getY() {
+        return this.y;
     }
 
     @SuppressWarnings("DuplicatedCode")

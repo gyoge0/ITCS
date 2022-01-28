@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.Random;
 import javax.sound.sampled.*;
 import javax.swing.*;
-import com.gyoge.itcsgraphics.objects.*;
+import com.gyoge.itcsgraphics.drawables.*;
 
 public class WinterWonderland extends JPanel {
 

@@ -1,4 +1,4 @@
-package com.gyoge.itcsgraphics.objects;
+package com.gyoge.itcsgraphics.drawables;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -6,10 +6,10 @@ import java.awt.Graphics;
 /**
  * Class that draws image of Rick Astley.
  */
-public class Rick {
+public class Rick implements Drawable {
 
-    private final int x;
-    private final int y;
+    private int x;
+    private int y;
 
     /**
      * Constructor.
@@ -21,6 +21,23 @@ public class Rick {
         this.x = x;
         this.y = y;
     }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getX() {
+        return this.x;
+    }
+
+    public int getY() {
+        return this.y;
+    }
+
 
     /**
      * Draws the legs of Rick.
