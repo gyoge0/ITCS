@@ -9,8 +9,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import javax.swing.WindowConstants;
 
 /**
  * Animation
@@ -41,6 +43,23 @@ public class Animation extends JPanel {
     protected Animator[] animators;
     /** Params with info for each animator. */
     protected HashMap<String, Object> params;
+
+    /**
+     * A method to quickly start up an animation.
+     *
+     * @param animation The animation to run.
+     */
+    public static void startUp(Animation animation) {
+        JFrame frame = new JFrame(
+            String.format("Goon presents: %s by Yogesh Thambidurai", animation.getShownName())
+        );
+
+        frame.setSize(FaceOff.WIDTH, FaceOff.HEIGHT);
+        frame.setLocation(0, 0);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        frame.setContentPane(animation);
+    }
 
     /**
      * Set up animators. Should be overridden by subclasses.

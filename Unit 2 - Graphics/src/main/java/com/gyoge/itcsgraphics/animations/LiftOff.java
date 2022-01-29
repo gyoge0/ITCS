@@ -11,9 +11,6 @@ import java.util.Random;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
-
 /**
  * LiftOff
  * <p>
@@ -41,15 +38,7 @@ public class LiftOff extends Animation {
     public static void main(String[] args) {
         Animation animation = new LiftOff();
 
-        JFrame frame = new JFrame(
-            String.format("Goon presents: %s by Yogesh Thambidurai", animation.getShownName())
-        );
-
-        frame.setSize(LiftOff.WIDTH, LiftOff.HEIGHT);
-        frame.setLocation(0, 0);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.setContentPane(animation);
+        Animation.startUp(animation);
     }
 
     @Override
