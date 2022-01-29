@@ -28,7 +28,8 @@ public class Animation extends JPanel {
     /** Default height for animations. */
     @SuppressWarnings("unused")
     public static final int HEIGHT = 400;
-    /** Default fps/tick rate for animations. */
+    /** FPS/Tick rate for animations. Can ove overridden. */
+    @SuppressWarnings("unused")
     protected static final int FPS = 60;
     /** BufferedImage to draw objects on. */
     protected BufferedImage bufferedImage;
@@ -92,8 +93,8 @@ public class Animation extends JPanel {
             repaint();
         }
 
-        public void startTimer() {
-            Timer timer = new Timer(1000 / FPS, this);
+        public void startTimer(int fps) {
+            Timer timer = new Timer(1000 / fps, this);
             timer.start();
         }
 

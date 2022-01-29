@@ -35,7 +35,7 @@ public class LiftOff extends Animation {
 
         this.setUp();
 
-        new TimerListener().startTimer();
+        new TimerListener().startTimer(FPS);
     }
 
     public static void main(String[] args) {
