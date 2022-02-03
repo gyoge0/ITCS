@@ -49,12 +49,12 @@ public class Animation extends JPanel {
      *
      * @param animation The animation to run.
      */
-    public static void startUp(Animation animation) {
+    public static void startUp(Animation animation, int width, int height) {
         JFrame frame = new JFrame(
             String.format("Goon presents: %s by Yogesh Thambidurai", animation.getShownName())
         );
 
-        frame.setSize(FaceOff.WIDTH, FaceOff.HEIGHT);
+        frame.setSize(width, height);
         frame.setLocation(0, 0);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);

@@ -15,43 +15,45 @@ import java.awt.Polygon;
 public class Snowflake implements Drawable {
 
     private static final Random random = new Random();
-    private int x;
-    private int y;
+    private double x;
+    private double y;
 
     public Snowflake(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public int getX() {
+    public double getX() {
         return this.x;
     }
 
-    public void setX(int x) {
+    public void setX(double x) {
         this.x = x;
     }
 
-    public int getY() {
+    public double getY() {
         return this.y;
     }
 
-    public void setY(int y) {
+    public void setY(double y) {
         this.y = y;
     }
 
     @SuppressWarnings("DuplicatedCode")
     public void draw(Graphics goon) {
+        int intX = (int) this.x;
+        int intY = (int) this.y;
         int color = random.nextInt(55) + 200;
         goon.setColor(new Color(color, color, color));
 
-        goon.drawLine(x - 3, y, x + 3, y);
-        goon.drawLine(x, y - 3, x, y + 3);
-        goon.drawLine(x - 3, y - 3, x + 3, y + 3);
-        goon.drawLine(x + 3, y - 3, x - 3, y + 3);
+        goon.drawLine(intX - 3, intY, intX + 3, intY);
+        goon.drawLine(intX, intY - 3, intX, intY + 3);
+        goon.drawLine(intX - 3, intY - 3, intX + 3, intY + 3);
+        goon.drawLine(intX + 3, intY - 3, intX - 3, intY + 3);
 
         goon.drawPolygon(new Polygon(
-            new int[]{x - 2, x + 2, x, x, x - 2, x + 2, x - 2, x - 2},
-            new int[]{y, y, y - 2, y + 2, y - 2, y + 2, y + 2, y - 2},
+            new int[]{intX - 2, intX + 2, intX, intX, intX - 2, intX + 2, intX - 2, intX - 2},
+            new int[]{intY, intY, intY - 2, intY + 2, intY - 2, intY + 2, intY + 2, intY - 2},
             8
         ));
     }

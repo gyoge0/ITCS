@@ -11,15 +11,6 @@ import java.util.Random;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
-/**
- * LiftOff
- * <p>
- * An animation of a spaceship that flies up and down, with the illusion of speeding up via stars
- * speeding up in the background.
- *
- * @author Yogesh Thambidurai
- * @see Animator
- */
 public class LiftOff extends Animation {
 
 
@@ -38,7 +29,7 @@ public class LiftOff extends Animation {
     public static void main(String[] args) {
         Animation animation = new LiftOff();
 
-        Animation.startUp(animation);
+        Animation.startUp(animation, WIDTH, HEIGHT);
     }
 
     @Override
@@ -53,9 +44,10 @@ public class LiftOff extends Animation {
         this.setShownName("Lift Off!");
 
         this.params = new HashMap<>();
-        this.params.put("dx", 0);
-        this.params.put("spaceshipDy", 1);
-        this.params.put("snowflakeDy", 1);
+        this.params.put("spaceshipDy", 1.0);
+        this.params.put("snowflakeDy", 1.0);
+        this.params.put("spaceshipDx", 0.0);
+        this.params.put("snowflakeDx", 0.0);
         this.params.put("WIDTH", WIDTH);
         this.params.put("HEIGHT", HEIGHT);
 
@@ -65,7 +57,7 @@ public class LiftOff extends Animation {
             animatorsAL.add(new SnowflakeAnimator(
                 random.nextInt(WIDTH),
                 random.nextInt(HEIGHT),
-                "dx",
+                "snowflakeDx",
                 "snowflakeDy"
             ));
         }
@@ -91,8 +83,8 @@ public class LiftOff extends Animation {
         }
 
         // Accelerate the spaceship and snowflakes
-        params.put("spaceshipDy", (int) Math.floor((int) params.get("spaceshipDy") - 0.05));
-        params.put("snowflakeDy", (int) Math.ceil((int) params.get("snowflakeDy") + 0.05));
+        params.put("spaceshipDy", (double) params.get("spaceshipDy") - 0.05);
+        params.put("snowflakeDy", (double) params.get("snowflakeDy") + 0.05);
     }
 
 }

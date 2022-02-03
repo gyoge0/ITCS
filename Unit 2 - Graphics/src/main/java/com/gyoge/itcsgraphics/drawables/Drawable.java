@@ -11,29 +11,19 @@ import java.awt.Graphics;
  * @author Yogesh Thambidurai
  * @see com.gyoge.itcsgraphics.animators.Animator
  */
+@SuppressWarnings("unused")
 public interface Drawable {
 
-    /** X coordinate to draw at. */
-    int x = 0;
-    /** Y coordinate to draw at. */
-    int y = 0;
+    double x = 0;
+    double y = 0;
 
-    /** Getter for x. */
-    int getX();
+    void setX(double x);
 
-    /** Setter for x. */
-    void setX(int x);
+    void setY(double y);
 
-    /** Getter for y. */
-    int getY();
+    double getX();
 
-    /** Setter for y. */
-    void setY(int y);
+    double getY();
 
-    /**
-     * Draws the object to the graphics object.
-     *
-     * @param goon Graphics object to draw to.
-     */
     void draw(Graphics goon);
 }

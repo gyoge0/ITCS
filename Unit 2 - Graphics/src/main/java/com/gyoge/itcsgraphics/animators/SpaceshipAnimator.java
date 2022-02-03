@@ -30,7 +30,7 @@ public class SpaceshipAnimator implements Animator {
     @SuppressWarnings({"DuplicateCondition", "ConstantConditions"})
     @Override
     public Drawable getDrawable(HashMap<String, Object> params) {
-        int newY = this.drawable.getY() + (int) params.get(this.dy);
+        double newY = this.drawable.getY() + (double) params.get(this.dy);
         if (newY > 400 && goingDown) {
             privDy = 0;
             this.drawable.setY(this.drawable.getY() + 1);

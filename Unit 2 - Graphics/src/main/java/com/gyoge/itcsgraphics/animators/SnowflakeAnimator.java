@@ -25,8 +25,8 @@ public class SnowflakeAnimator implements Animator {
 
     @Override
     public Drawable getDrawable(HashMap<String, Object> params) {
-        this.drawable.setX(drawable.getX() + (int) params.get(dx));
-        int newY = drawable.getY() + (int) params.get(dy);
+        this.drawable.setX(drawable.getX() + (double) params.get(dx));
+        double newY = drawable.getY() + (double) params.get(dy);
 
         if (newY - 10 > (int) params.get("HEIGHT")) {
             this.drawable.setY(0);

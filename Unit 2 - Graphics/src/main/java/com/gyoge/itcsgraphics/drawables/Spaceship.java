@@ -15,37 +15,47 @@ import javax.swing.ImageIcon;
  */
 public class Spaceship implements Drawable {
 
-    private int x = 0;
-    private int y = 0;
+    private double x = 0;
+    private double y = 0;
 
-    public int getX() {
+    @Override
+    public double getX() {
         return x;
     }
 
-    public void setX(int x) {
+    @Override
+    public void setX(double x) {
         this.x = x;
     }
 
-    public int getY() {
+    @Override
+    public double getY() {
         return y;
     }
 
-    public void setY(int y) {
+    @Override
+    public void setY(double y) {
         this.y = y;
     }
 
     public void draw(Graphics goon) {
+        int intX = (int) x;
+        int intY = (int) y;
         goon.setColor(new Color(186, 181, 169));
-        goon.fillRect(x, y, 50, 100);
+        goon.fillRect(intX, intY, 50, 100);
 
         // fill triangle
         goon.setColor(new Color(255, 255, 255));
-        goon.fillPolygon(new int[]{x, x + 25, x + 50}, new int[]{y, y - 50, y}, 3);
+        goon.fillPolygon(
+            new int[]{intX, intX + 25, intX + 50},
+            new int[]{intY, intY - 50, intY},
+            3
+        );
 
         goon.drawImage(
             new ImageIcon("src/main/resources/images/rock.jpg").getImage(),
-            x + 5,
-            y + 5,
+            intX + 5,
+            intY + 5,
             40,
             40,
             null

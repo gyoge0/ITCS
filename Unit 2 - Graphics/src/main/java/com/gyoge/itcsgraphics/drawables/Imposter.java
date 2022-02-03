@@ -7,8 +7,10 @@ import java.awt.*;
  */
 public class Imposter implements Drawable {
 
-    private int x;
-    private int y;
+    private int intX;
+    private int intY;
+    private double x;
+    private double y;
 
     /**
      * Constructor.
@@ -16,25 +18,29 @@ public class Imposter implements Drawable {
      * @param x The x coordinate of the imposter (approximately the top left corner).
      * @param y The y coordinate of the imposter (approximately the top left corner).
      */
-    public Imposter(int x, int y) {
+    public Imposter(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
 
-    public void setX(int x) {
+    @Override
+    public void setX(double x) {
         this.x = x;
     }
 
-    public void setY(int y) {
+    @Override
+    public void setY(double y) {
         this.y = y;
     }
 
-    public int getX() {
+    @Override
+    public double getX() {
         return this.x;
     }
 
-    public int getY() {
+    @Override
+    public double getY() {
         return this.y;
     }
 
@@ -46,10 +52,10 @@ public class Imposter implements Drawable {
     private void drawOutline(Graphics goon) {
         goon.setColor(new Color(0, 0, 0));
         // Body
-        goon.fillRoundRect(x - 5, y - 5, 60, 90, 60, 60);
+        goon.fillRoundRect(intX - 5, intY - 5, 60, 90, 60, 60);
         // Feet
-        goon.fillRoundRect(x - 5, y + 40, 30, 65, 30, 30);
-        goon.fillRoundRect(x + 25, y + 40, 30, 65, 30, 30);
+        goon.fillRoundRect(intX - 5, intY + 40, 30, 65, 30, 30);
+        goon.fillRoundRect(intX + 25, intY + 40, 30, 65, 30, 30);
     }
 
     /**
@@ -59,7 +65,7 @@ public class Imposter implements Drawable {
      */
     private void drawBody(Graphics goon) {
         goon.setColor(new Color(122, 2, 55));
-        goon.fillRoundRect(x, y, 51, 80, 51, 50);
+        goon.fillRoundRect(intX, intY, 51, 80, 51, 50);
     }
 
     /**
@@ -70,10 +76,10 @@ public class Imposter implements Drawable {
     private void drawLit(Graphics goon) {
         goon.setColor(new Color(199, 11, 0));
         for (int i = 0; i < 8; i++) {
-            goon.fillRoundRect(x + 11 + i, y + (i / 3), 30, 60, 30, 30);
+            goon.fillRoundRect(intX + 11 + i, intY + (i / 3), 30, 60, 30, 30);
         }
         for (int i = 0; i < 4; i++) {
-            goon.fillRoundRect(x + 18 + i, y + 5 + (i / 2), 30, 60, 30, 30);
+            goon.fillRoundRect(intX + 18 + i, intY + 5 + (i / 2), 30, 60, 30, 30);
         }
     }
 
@@ -85,8 +91,8 @@ public class Imposter implements Drawable {
     private void drawFeet(Graphics goon) {
         goon.setColor(new Color(122, 2, 55));
 
-        goon.fillRoundRect(x, y + 40, 20, 60, 20, 20);
-        goon.fillRoundRect(x + 31, y + 40, 20, 60, 20, 20);
+        goon.fillRoundRect(intX, intY + 40, 20, 60, 20, 20);
+        goon.fillRoundRect(intX + 31, intY + 40, 20, 60, 20, 20);
     }
 
     /**
@@ -97,10 +103,10 @@ public class Imposter implements Drawable {
     private void drawBackpack(Graphics goon) {
         // This needs to go under the other outlines, so I'm just going to draw it here.
         goon.setColor(new Color(0, 0, 0));
-        goon.fillRoundRect(x - 20, y + 15, 50, 60, 50, 30);
+        goon.fillRoundRect(intX - 20, intY + 15, 50, 60, 50, 30);
 
         goon.setColor(new Color(122, 2, 55));
-        goon.fillRoundRect(x - 15, y + 20, 40, 50, 40, 20);
+        goon.fillRoundRect(intX - 15, intY + 20, 40, 50, 40, 20);
     }
 
     /**
@@ -111,10 +117,10 @@ public class Imposter implements Drawable {
     private void drawVisor(Graphics goon) {
         // This needs to go over the other outlines, so I'm just going to draw it here.
         goon.setColor(new Color(0, 0, 0));
-        goon.fillRoundRect(x + 20, y + 5, 45, 32, 45, 25);
+        goon.fillRoundRect(intX + 20, intY + 5, 45, 32, 45, 25);
 
         goon.setColor(new Color(143, 201, 220));
-        goon.fillRoundRect(x + 25, y + 8, 35, 24, 35, 17);
+        goon.fillRoundRect(intX + 25, intY + 8, 35, 24, 35, 17);
     }
 
     /**
@@ -123,6 +129,8 @@ public class Imposter implements Drawable {
      * @param goon The graphics object.
      */
     public void draw(Graphics goon) {
+        this.intX = (int) this.x;
+        this.intY = (int) this.y;
         this.drawBackpack(goon);
         this.drawOutline(goon);
         this.drawBody(goon);
