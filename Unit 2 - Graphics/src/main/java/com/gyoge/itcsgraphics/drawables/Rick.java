@@ -4,7 +4,10 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * Class that draws image of Rick Astley.
+ * Draw an image of Rick Astley.
+ *
+ * @author Yogesh Thambidurai
+ * @see Drawable
  */
 public class Rick implements Drawable {
 
@@ -170,11 +173,7 @@ public class Rick implements Drawable {
         goon.fillRoundRect(this.intX - 30, this.intY + 80, 60, 85, 60, 15);
     }
 
-    /**
-     * Draws Rick.
-     *
-     * @param goon The graphics object.
-     */
+    @Override
     public void draw(Graphics goon) {
         this.intX = (int) this.x;
         this.intY = (int) this.y;

@@ -14,16 +14,27 @@ import java.awt.Graphics;
 @SuppressWarnings("unused")
 public interface Drawable {
 
+    /** The x coordinate of a drawable. Should be casted to int before drawing. */
     double x = 0;
+    /** The y coordinate of a drawable. Should be casted to int before drawing. */
     double y = 0;
 
-    void setX(double x);
-
-    void setY(double y);
-
+    /** Getter for x. */
     double getX();
 
+    /** Setter for x. */
+    void setX(double x);
+
+    /** Getter for y. */
     double getY();
 
+    /** Setter for y. */
+    void setY(double y);
+
+    /**
+     * Draw the drawable to the graphics object.
+     *
+     * @param goon The graphics object to draw to.
+     */
     void draw(Graphics goon);
 }

@@ -30,7 +30,7 @@ public class Animation extends JPanel {
     /** Default height for animations. */
     @SuppressWarnings("unused")
     public static final int HEIGHT = 400;
-    /** FPS/Tick rate for animations. Can ove overridden. */
+    /** FPS/Tick rate for animations. Can be overridden. */
     @SuppressWarnings("unused")
     protected static final int FPS = 60;
     /** BufferedImage to draw objects on. */
@@ -62,7 +62,12 @@ public class Animation extends JPanel {
     }
 
     /**
-     * Set up animators. Should be overridden by subclasses.
+     * Set up animators.
+     *
+     * <p>
+     * Should be overridden by subclasses.
+     *
+     * @see Animator
      */
     protected void setUp() {
         // Should be overridden by subclasses
@@ -73,6 +78,8 @@ public class Animation extends JPanel {
      *
      * <p>
      * Should be overridden by subclasses.
+     *
+     * @see Animator
      */
     protected void tick() {
         for (Animator animator : animators) {

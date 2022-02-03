@@ -7,9 +7,13 @@ import java.util.HashMap;
 
 /**
  * An animator for a spaceship.
+ * <p>
+ * This animator will have the spaceship accelerate up to the top, decelerate back down, and
+ * continue accelerating up.
  *
  * @author Yogesh Thambidurai
  * @see Spaceship
+ * @see Animator
  */
 public class SpaceshipAnimator implements Animator {
 

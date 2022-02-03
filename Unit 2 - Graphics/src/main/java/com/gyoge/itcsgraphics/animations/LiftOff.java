@@ -11,6 +11,19 @@ import java.util.Random;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
+/**
+ * A spaceship that flies up and down over a backdrop of stars.
+ *
+ * <p>
+ * Yes, the stars are reused snowflakes.
+ *
+ * @author Yogesh Thambidurai
+ * @see Animation
+ * @see com.gyoge.itcsgraphics.drawables.Snowflake
+ * @see SnowflakeAnimator
+ * @see com.gyoge.itcsgraphics.drawables.Spaceship
+ * @see SpaceshipAnimator
+ */
 public class LiftOff extends Animation {
 
 
@@ -35,12 +48,11 @@ public class LiftOff extends Animation {
     @Override
     protected void setUp() {
 
-        // set up Buffered Image and Graphics objects
+        // Set up Buffered Image and Graphics objects
         this.bufferedImage = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
         goon = bufferedImage.getGraphics();
 
-        //
-
+        // Set name
         this.setShownName("Lift Off!");
 
         this.params = new HashMap<>();
@@ -65,7 +77,7 @@ public class LiftOff extends Animation {
         // Add in 1 spaceship animator
         animatorsAL.add(new SpaceshipAnimator(WIDTH / 2, 700, "spaceshipDy"));
 
-        // set animators to the array value of animatorsAL
+        // Set animators to the array value of animatorsAL for speed
         this.animators = animatorsAL.toArray(new Animator[0]);
 
     }

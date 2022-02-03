@@ -11,6 +11,7 @@ import java.awt.Polygon;
  *
  * @author Yogesh Thambidurai
  * @see com.gyoge.itcsgraphics.animators.SnowflakeAnimator
+ * @see Drawable
  */
 public class Snowflake implements Drawable {
 
@@ -40,6 +41,7 @@ public class Snowflake implements Drawable {
     }
 
     @SuppressWarnings("DuplicatedCode")
+    @Override
     public void draw(Graphics goon) {
         int intX = (int) this.x;
         int intY = (int) this.y;

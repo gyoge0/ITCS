@@ -8,10 +8,11 @@ import javax.swing.ImageIcon;
 /**
  * Spaceship
  * <p>
- * A spaceship with a rock in it.
+ * A spaceship with an image of Dwayne "The Rock" Johnson in it.
  *
  * @author Yogesh Thambidurai
  * @see com.gyoge.itcsgraphics.animators.SpaceshipAnimator
+ * @see Drawable
  */
 @SuppressWarnings("unused")
 public class Spaceship implements Drawable {
@@ -60,6 +61,7 @@ public class Spaceship implements Drawable {
         this.y = y;
     }
 
+    @Override
     public void draw(Graphics goon) {
         int intX = (int) x;
         int intY = (int) y;

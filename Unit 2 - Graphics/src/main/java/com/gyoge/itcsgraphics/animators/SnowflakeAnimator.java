@@ -7,9 +7,13 @@ import java.util.HashMap;
 
 /**
  * Animator for a snowflake.
+ * <p>
+ * This animator will have the snowflake move down and then wrap back to the top while
+ * accelerating.
  *
  * @author Yogesh Thambidurai
  * @see Snowflake
+ * @see Animator
  */
 public class SnowflakeAnimator implements Animator {
 

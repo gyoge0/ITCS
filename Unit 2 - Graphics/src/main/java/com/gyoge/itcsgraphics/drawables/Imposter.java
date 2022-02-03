@@ -1,9 +1,13 @@
 package com.gyoge.itcsgraphics.drawables;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 
 /**
  * Class that draws an imposter from Among Us.
+ *
+ * @author Yogesh Thambidurai
+ * @see Drawable
  */
 public class Imposter implements Drawable {
 
@@ -23,6 +27,10 @@ public class Imposter implements Drawable {
         this.y = y;
     }
 
+    @Override
+    public double getX() {
+        return this.x;
+    }
 
     @Override
     public void setX(double x) {
@@ -30,18 +38,13 @@ public class Imposter implements Drawable {
     }
 
     @Override
-    public void setY(double y) {
-        this.y = y;
-    }
-
-    @Override
-    public double getX() {
-        return this.x;
-    }
-
-    @Override
     public double getY() {
         return this.y;
+    }
+
+    @Override
+    public void setY(double y) {
+        this.y = y;
     }
 
     /**
@@ -123,11 +126,7 @@ public class Imposter implements Drawable {
         goon.fillRoundRect(intX + 25, intY + 8, 35, 24, 35, 17);
     }
 
-    /**
-     * Draws the imposter.
-     *
-     * @param goon The graphics object.
-     */
+    @Override
     public void draw(Graphics goon) {
         this.intX = (int) this.x;
         this.intY = (int) this.y;
