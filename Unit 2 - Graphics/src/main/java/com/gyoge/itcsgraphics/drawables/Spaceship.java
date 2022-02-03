@@ -13,10 +13,32 @@ import javax.swing.ImageIcon;
  * @author Yogesh Thambidurai
  * @see com.gyoge.itcsgraphics.animators.SpaceshipAnimator
  */
+@SuppressWarnings("unused")
 public class Spaceship implements Drawable {
 
     private double x = 0;
     private double y = 0;
+
+
+    private int width = 50;
+    private int height = 100;
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
 
     @Override
     public double getX() {
@@ -42,13 +64,13 @@ public class Spaceship implements Drawable {
         int intX = (int) x;
         int intY = (int) y;
         goon.setColor(new Color(186, 181, 169));
-        goon.fillRect(intX, intY, 50, 100);
+        goon.fillRect(intX, intY, width, height);
 
         // fill triangle
         goon.setColor(new Color(255, 255, 255));
         goon.fillPolygon(
-            new int[]{intX, intX + 25, intX + 50},
-            new int[]{intY, intY - 50, intY},
+            new int[]{intX, intX + (width / 2), intX + width},
+            new int[]{intY, intY - (height / 2), intY},
             3
         );
 
@@ -56,8 +78,8 @@ public class Spaceship implements Drawable {
             new ImageIcon("src/main/resources/images/rock.jpg").getImage(),
             intX + 5,
             intY + 5,
-            40,
-            40,
+            width - 10,
+            height - 10,
             null
         );
 

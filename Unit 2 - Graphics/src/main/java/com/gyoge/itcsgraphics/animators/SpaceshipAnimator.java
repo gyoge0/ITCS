@@ -27,6 +27,15 @@ public class SpaceshipAnimator implements Animator {
         this.dy = dy;
     }
 
+    @SuppressWarnings("unused")
+    public SpaceshipAnimator(int x, int y, int width, int height, String dy) {
+        this.drawable.setX(x);
+        this.drawable.setY(y);
+        this.drawable.setHeight(height);
+        this.drawable.setWidth(width);
+        this.dy = dy;
+    }
+
     @SuppressWarnings({"DuplicateCondition", "ConstantConditions"})
     @Override
     public Drawable getDrawable(HashMap<String, Object> params) {
