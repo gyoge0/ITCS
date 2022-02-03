@@ -24,10 +24,10 @@ import javax.swing.WindowConstants;
  */
 public class Animation extends JPanel {
 
-    /** Default width for animations. */
+    /** Width for animations. Can be overridden. */
     @SuppressWarnings("unused")
     public static final int WIDTH = 400;
-    /** Default height for animations. */
+    /** Height for animations. Can be overridden. */
     @SuppressWarnings("unused")
     public static final int HEIGHT = 400;
     /** FPS/Tick rate for animations. Can be overridden. */
@@ -48,6 +48,8 @@ public class Animation extends JPanel {
      * A method to quickly start up an animation.
      *
      * @param animation The animation to run.
+     * @param width     The default width of the animation.
+     * @param height    The default height of the animation.
      */
     public static void startUp(Animation animation, int width, int height) {
         JFrame frame = new JFrame(
@@ -87,12 +89,20 @@ public class Animation extends JPanel {
         }
     }
 
-    /** Getter for name. */
+    /**
+     * Getter for name.
+     *
+     * @return The name.
+     */
     public String getShownName() {
         return this.shownName;
     }
 
-    /** Set name. Mostly used in setUp() boilerplate. */
+    /**
+     * Set name. Mostly used in setUp() boilerplate.
+     *
+     * @param name The value to set name to.
+     */
     @SuppressWarnings("SameParameterValue")
     protected void setShownName(String name) {
         this.shownName = name;
@@ -119,6 +129,11 @@ public class Animation extends JPanel {
             repaint();
         }
 
+        /**
+         * Start the timer at the fps specified.
+         *
+         * @param fps The fps/tick rate.
+         */
         public void startTimer(int fps) {
             Timer timer = new Timer(1000 / fps, this);
             timer.start();

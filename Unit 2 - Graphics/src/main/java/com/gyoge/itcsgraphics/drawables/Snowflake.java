@@ -15,31 +15,45 @@ import java.awt.Polygon;
  */
 public class Snowflake implements Drawable {
 
+    /** Random object to use. */
     private static final Random random = new Random();
+    /** @see Drawable#x */
     private double x;
+    /** @see Drawable#y */
     private double y;
 
+    /**
+     * Constructs a new snowflake.
+     *
+     * @param x The x coordinate of the snowflake.
+     * @param y The y coordinate of the snowflake.
+     */
     public Snowflake(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    /** {@inheritDoc} */
     public double getX() {
         return this.x;
     }
 
+    /** {@inheritDoc} */
     public void setX(double x) {
         this.x = x;
     }
 
+    /** {@inheritDoc} */
     public double getY() {
         return this.y;
     }
 
+    /** {@inheritDoc} */
     public void setY(double y) {
         this.y = y;
     }
 
+    /** {@inheritDoc} */
     @SuppressWarnings("DuplicatedCode")
     @Override
     public void draw(Graphics goon) {

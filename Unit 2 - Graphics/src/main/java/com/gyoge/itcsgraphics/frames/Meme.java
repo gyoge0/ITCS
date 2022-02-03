@@ -1,13 +1,30 @@
 package com.gyoge.itcsgraphics.frames;
 
-import java.awt.*;
-import java.awt.font.*;
-import java.awt.image.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.RenderingHints;
+import java.awt.Shape;
+import java.awt.font.TextLayout;
+import java.awt.image.BufferedImage;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+
+/**
+ * Draw a meme.
+ *
+ * @author Yogesh Thambidurai
+ */
 public class Meme extends JPanel {
 
+    /** The default width of the meme. */
     private static final int WIDTH = 800;
+    /** The default height of the meme. */
     private static final int HEIGHT = 500;
 
     /** The buffered image to draw stuff onto. */
@@ -47,6 +64,11 @@ public class Meme extends JPanel {
 
     }
 
+    /**
+     * Main method.
+     *
+     * @param args Command line arguments.
+     */
     public static void main(String[] args) {
         JFrame frame = new JFrame("Goon presents: A Meme by Yogesh Thambidurai");
         frame.setSize(1000, 800);
@@ -66,6 +88,7 @@ public class Meme extends JPanel {
      * @param goon         The Graphics instance.
      * @param text         The String to draw.
      * @param rect         The Rectangle to center the text in.
+     * @param font         The font to use.
      * @param textColor    The color of the text.
      * @param outlineColor The color of the outline.
      */

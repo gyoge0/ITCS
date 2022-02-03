@@ -17,20 +17,38 @@ import java.util.HashMap;
  */
 public class SpaceshipAnimator implements Animator {
 
+    /** @see Animator#drawable */
     private final Spaceship drawable = new Spaceship();
+    /** The string used in the params to signify the y acceleration. */
     private final String dy;
     /** If the spaceship is going down. */
     private boolean goingDown = false;
-    /** The dY when going down. */
+    /** The dy value used when going down. */
     @SuppressWarnings("SpellCheckingInspection")
     private int privDy = 0;
 
+    /**
+     * Constructs a new SpaceshipAnimator.
+     *
+     * @param x  The x coordinate of the spaceship.
+     * @param y  The y coordinate of the spaceship.
+     * @param dy The keyword used to signify the y acceleration.
+     */
     public SpaceshipAnimator(int x, int y, String dy) {
         this.drawable.setX(x);
         this.drawable.setY(y);
         this.dy = dy;
     }
 
+    /**
+     * Constructs a new SpaceshipAnimator.
+     *
+     * @param x      The x coordinate of the spaceship.
+     * @param y      The y coordinate of the spaceship.
+     * @param width  The width of the spaceship.
+     * @param height The height of the spaceship.
+     * @param dy     The keyword used to signify the y acceleration.
+     */
     @SuppressWarnings("unused")
     public SpaceshipAnimator(int x, int y, int width, int height, String dy) {
         this.drawable.setX(x);
@@ -40,6 +58,7 @@ public class SpaceshipAnimator implements Animator {
         this.dy = dy;
     }
 
+    /** {@inheritDoc} */
     @SuppressWarnings({"DuplicateCondition", "ConstantConditions"})
     @Override
     public Drawable getDrawable(HashMap<String, Object> params) {

@@ -17,50 +17,61 @@ import javax.swing.ImageIcon;
 @SuppressWarnings("unused")
 public class Spaceship implements Drawable {
 
+    /** @see Drawable#x */
     private double x = 0;
+    /** @see Drawable#y */
     private double y = 0;
 
-
+    /** The width of the rocket. */
     private int width = 50;
+    /** The height of the rocket. */
     private int height = 100;
 
+    /** {@inheritDoc} */
     public int getWidth() {
         return width;
     }
 
+    /** {@inheritDoc} */
     public void setWidth(int width) {
         this.width = width;
     }
 
+    /** {@inheritDoc} */
     public int getHeight() {
         return height;
     }
 
+    /** {@inheritDoc} */
     public void setHeight(int height) {
         this.height = height;
     }
 
-
+    /** {@inheritDoc} */
     @Override
     public double getX() {
         return x;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void setX(double x) {
         this.x = x;
     }
 
+    /** {@inheritDoc} */
     @Override
     public double getY() {
         return y;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void setY(double y) {
         this.y = y;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void draw(Graphics goon) {
         int intX = (int) x;
@@ -84,7 +95,6 @@ public class Spaceship implements Drawable {
             height - 10,
             null
         );
-
 
     }
 

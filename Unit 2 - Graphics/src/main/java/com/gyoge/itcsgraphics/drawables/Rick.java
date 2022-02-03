@@ -11,9 +11,13 @@ import java.awt.Graphics;
  */
 public class Rick implements Drawable {
 
+    /** The casted value of x when drawing. */
     private int intX;
+    /** The casted value of y when drawing. */
     private int intY;
+    /** @see Drawable#x */
     private double x;
+    /** @see Drawable#y */
     private double y;
 
     /**
@@ -27,21 +31,25 @@ public class Rick implements Drawable {
         this.y = y;
     }
 
+    /** {@inheritDoc} */
     @Override
     public double getX() {
         return x;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void setX(double x) {
         this.x = x;
     }
 
+    /** {@inheritDoc} */
     @Override
     public double getY() {
         return y;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void setY(double y) {
         this.y = y;
@@ -173,6 +181,7 @@ public class Rick implements Drawable {
         goon.fillRoundRect(this.intX - 30, this.intY + 80, 60, 85, 60, 15);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void draw(Graphics goon) {
         this.intX = (int) this.x;

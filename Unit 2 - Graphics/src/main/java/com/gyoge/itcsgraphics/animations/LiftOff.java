@@ -27,11 +27,20 @@ import java.awt.image.BufferedImage;
 public class LiftOff extends Animation {
 
 
+    /**
+     * @see Animation#WIDTH
+     */
     public static final int WIDTH = 800;
+    /** @see Animation#HEIGHT */
     public static final int HEIGHT = 800;
+    /** @see Animation#FPS */
     public static final int FPS = 30;
+    /** Random object. */
     private static final Random random = new Random();
 
+    /**
+     * Constructor to start the animation.
+     */
     public LiftOff() {
 
         this.setUp();
@@ -39,12 +48,18 @@ public class LiftOff extends Animation {
         new TimerListener().startTimer(FPS);
     }
 
+    /**
+     * Main method.
+     *
+     * @param args Command line arguments.
+     */
     public static void main(String[] args) {
         Animation animation = new LiftOff();
 
         Animation.startUp(animation, WIDTH, HEIGHT);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void setUp() {
 
@@ -83,6 +98,7 @@ public class LiftOff extends Animation {
     }
 
 
+    /** @see Animation#tick() */
     @Override
     protected void tick() {
         // Draw background

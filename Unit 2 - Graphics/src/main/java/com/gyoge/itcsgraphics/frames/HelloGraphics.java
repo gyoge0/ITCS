@@ -2,17 +2,29 @@
 
 package com.gyoge.itcsgraphics.frames;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.Arrays;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
+/**
+ * Draw some simple graphics.
+ *
+ * @author Yogesh Thambidurai
+ */
 public class HelloGraphics extends JPanel {
 
+    /**
+     * Main method.
+     *
+     * @param args Command line arguments.
+     */
     public static void main(String[] args) {
         JFrame frame = new JFrame("Goon presents: HelloGraphics by Yogesh Thambidurai");
         frame.setSize(1000, 800);
@@ -24,6 +36,11 @@ public class HelloGraphics extends JPanel {
         frame.setVisible(true);
     }
 
+    /**
+     * Paint the frame.
+     *
+     * @param goon The graphics object.
+     */
     @Override
     public void paintComponent(Graphics goon) {
 

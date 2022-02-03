@@ -2,22 +2,49 @@
 
 package com.gyoge.itcsgraphics.frames;
 
-import java.awt.*;
-import java.awt.geom.*;
-import java.net.URL;
+import com.gyoge.itcsgraphics.drawables.Imposter;
+import com.gyoge.itcsgraphics.drawables.Rick;
+
 import java.util.Objects;
 import java.util.Random;
-import javax.sound.sampled.*;
-import javax.swing.*;
-import com.gyoge.itcsgraphics.drawables.*;
 
+import java.net.URL;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Polygon;
+import java.awt.Rectangle;
+import java.awt.geom.Rectangle2D;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+
+/**
+ * A winter wonderland scene.
+ *
+ * @author Yogesh Thambidurai
+ */
 public class WinterWonderland extends JPanel {
 
+    /** The width of the scene. */
     private static final int WIDTH = 1000;
+    /** The height of the scene. */
     private static final int HEIGHT = 1000;
 
+    /** The Random object to use. */
     private static final Random random = new Random();
 
+    /**
+     * Main method.
+     *
+     * @param args Command line arguments.
+     */
     public static void main(String[] args) {
         JFrame frame = new JFrame("Goon presents: WinterWonderland by Yogesh Thambidurai");
         frame.setSize(WIDTH, HEIGHT);
@@ -35,6 +62,7 @@ public class WinterWonderland extends JPanel {
     /**
      * Play a rickroll.
      *
+     * @param panel The panel to play one.
      * @see <a href=https://stackoverflow.com/a/20514020>https://stackoverflow.com/a/20514020</a>
      */
     public static void playRickRoll(JPanel panel) {
@@ -104,6 +132,7 @@ public class WinterWonderland extends JPanel {
      * @param goon      The Graphics instance.
      * @param text      The String to draw.
      * @param rect      The Rectangle to center the text in.
+     * @param font      The font to use.
      * @param textColor The color of the text.
      * @param bgColor   The color of the background.
      * @see <a href=https://stackoverflow.com/a/27740330>https://stackoverflow.com/a/27740330</a>
@@ -161,6 +190,7 @@ public class WinterWonderland extends JPanel {
         }
 
         for (int i = 0; i < WIDTH; i += 100) {
+            //noinspection IntegerDivisionInFloatingPointContext
             new Imposter(
                 i,
                 random.nextInt(HEIGHT / 2 + 110) + (HEIGHT / 2) - 110

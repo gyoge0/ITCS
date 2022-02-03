@@ -11,9 +11,13 @@ import java.awt.Graphics;
  */
 public class Imposter implements Drawable {
 
+    /** The casted value of x when drawing. */
     private int intX;
+    /** The casted value of y when drawing. */
     private int intY;
+    /** @see Drawable#x */
     private double x;
+    /** @see Drawable#y */
     private double y;
 
     /**
@@ -27,21 +31,25 @@ public class Imposter implements Drawable {
         this.y = y;
     }
 
+    /** {@inheritDoc} */
     @Override
     public double getX() {
         return this.x;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void setX(double x) {
         this.x = x;
     }
 
+    /** {@inheritDoc} */
     @Override
     public double getY() {
         return this.y;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void setY(double y) {
         this.y = y;
@@ -126,6 +134,7 @@ public class Imposter implements Drawable {
         goon.fillRoundRect(intX + 25, intY + 8, 35, 24, 35, 17);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void draw(Graphics goon) {
         this.intX = (int) this.x;
