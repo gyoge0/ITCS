@@ -3,12 +3,22 @@ package com.gyoge.itcsgraphics.animations;
 import com.gyoge.itcsgraphics.animators.Animator;
 
 import java.util.HashMap;
+import java.util.Objects;
+
+import java.io.IOException;
+
+import java.net.URL;
 
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -73,6 +83,49 @@ public class Animation extends JPanel {
      */
     protected void setUp() {
         // Should be overridden by subclasses
+    }
+
+
+    /**
+     * Play a sound.
+     *
+     * @param resource URL to the resource to play.
+     * @throws LineUnavailableException      If the line is unavailable.
+     * @throws UnsupportedAudioFileException If the file is not supported.
+     * @throws IOException                   If the file cannot be found.
+     * @see <a href=https://stackoverflow.com/a/20514020>https://stackoverflow.com/a/20514020</a>
+     */
+    protected void playSound(URL resource) throws
+        LineUnavailableException,
+        UnsupportedAudioFileException,
+        IOException {
+        // Open an audio input stream.
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(
+            Objects.requireNonNull(resource)
+        );
+
+        // Get a sound clip resource.
+        Clip clip = AudioSystem.getClip();
+
+        // Open audio clip and load samples from the audio input stream.
+        clip.open(audioIn);
+        clip.start();
+        clip.loop(Clip.LOOP_CONTINUOUSLY);
+    }
+
+    /**
+     * Play a sound.
+     *
+     * @param path The path to the resource to play.
+     * @throws UnsupportedAudioFileException If the file is not supported.
+     * @throws LineUnavailableException      If the line is unavailable.
+     * @throws IOException                   If the file cannot be found.
+     */
+    protected void playSound(String path) throws
+        LineUnavailableException,
+        UnsupportedAudioFileException,
+        IOException {
+        playSound(this.getClass().getClassLoader().getResource(path));
     }
 
     /**
