@@ -32,25 +32,21 @@ public class Rick implements Drawable {
     }
 
     /** {@inheritDoc} */
-    @Override
     public double getX() {
         return x;
     }
 
     /** {@inheritDoc} */
-    @Override
     public void setX(double x) {
         this.x = x;
     }
 
     /** {@inheritDoc} */
-    @Override
     public double getY() {
         return y;
     }
 
     /** {@inheritDoc} */
-    @Override
     public void setY(double y) {
         this.y = y;
     }

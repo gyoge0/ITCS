@@ -32,25 +32,21 @@ public class Imposter implements Drawable {
     }
 
     /** {@inheritDoc} */
-    @Override
     public double getX() {
         return this.x;
     }
 
     /** {@inheritDoc} */
-    @Override
     public void setX(double x) {
         this.x = x;
     }
 
     /** {@inheritDoc} */
-    @Override
     public double getY() {
         return this.y;
     }
 
     /** {@inheritDoc} */
-    @Override
     public void setY(double y) {
         this.y = y;
     }
