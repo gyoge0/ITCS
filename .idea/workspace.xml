@@ -1,17 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="958142ff-e5f9-463d-af04-3731ca5f154e" name="Changes" comment="File rearrange/delete">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Fundamentals/Unit 2 - Fundamentals.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/Unit 2 - Graphics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/0/3/0312b20cb7ab7069c90927b058101eefd157d5a2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/3/e/3e892912902bbcf0e6647077e33cf5d15bd69d17" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/4/4/44196af5b156403fddf25dd71305b805f50075fe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/4/7/47652f86a0a7926baef9167889d15c58ca441fcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/4/9/496a238a6afa168dbaf6efd37bb459331589579c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/6/f/6fcc5e44fbf900bdbc90b4685f19a51dfc63fecc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/7/3/7325185508ce157ca7c9091bd6e770f4835df4cd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/7/5/7565536c31fc2bc50a3c9b0c6c41cdb55cc832d4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/7/a/7a7e86ead6655fe14536c4fbd0c09eeea0c2c830" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/8/d/8d616178055416ebc468f835a4bdc4cf078f5f65" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/c/1/c11a64eed798ff7fed78a1f4ed4390a886000de1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/c/3/c3807833882dff8a80ed6914604e40f02703cbde" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit 2 - Graphics/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unit 1 - JKarel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Unit 1 - JKarel/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unit 2 - Fundamentals/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Unit 2 - Fundamentals/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unit 2 - Graphics/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Unit 2 - Graphics/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="xw2qva9u" />
@@ -31,6 +65,9 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -49,6 +86,7 @@
       <workItem from="1642538547870" duration="227000" />
       <workItem from="1642538849323" duration="167000" />
       <workItem from="1643039068993" duration="4000" />
+      <workItem from="1644081706854" duration="123000" />
     </task>
     <task id="LOCAL-00001" summary="Config stuff">
       <created>1642090883887</created>
