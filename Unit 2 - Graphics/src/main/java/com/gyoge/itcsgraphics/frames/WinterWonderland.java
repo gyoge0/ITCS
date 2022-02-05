@@ -135,6 +135,7 @@ public class WinterWonderland extends JPanel {
      * @param font      The font to use.
      * @param textColor The color of the text.
      * @param bgColor   The color of the background.
+     * @author Yogesh Thambidurai
      * @see <a href=https://stackoverflow.com/a/27740330>https://stackoverflow.com/a/27740330</a>
      * @see <a href=https://stackoverflow.com/a/6416215>https://stackoverflow.com/a/6416215</a>
      */
