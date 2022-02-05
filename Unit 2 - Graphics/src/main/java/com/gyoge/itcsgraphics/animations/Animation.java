@@ -93,6 +93,7 @@ public class Animation extends JPanel {
      * @throws LineUnavailableException      If the line is unavailable.
      * @throws UnsupportedAudioFileException If the file is not supported.
      * @throws IOException                   If the file cannot be found.
+     * @author Yogesh Thambidurai
      * @see <a href=https://stackoverflow.com/a/20514020>https://stackoverflow.com/a/20514020</a>
      */
     protected void playSound(URL resource) throws
@@ -120,6 +121,7 @@ public class Animation extends JPanel {
      * @throws UnsupportedAudioFileException If the file is not supported.
      * @throws LineUnavailableException      If the line is unavailable.
      * @throws IOException                   If the file cannot be found.
+     * @author Yogesh Thambidurai
      */
     protected void playSound(String path) throws
         LineUnavailableException,
