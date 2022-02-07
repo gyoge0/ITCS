@@ -32,50 +32,36 @@ class Ball constructor(
 
     /** Diameter for the ball. */
     var diameter: Double = diameter
-        /** Custom setter to ensure radius is accurate. */
-        set(value) {
-            // If recursive setting is false, then we are setting diameter. Set the diameter, set
-            // recursive setting to true, set the radius, and then set recursive setting back to
-            // false.
-            if (!recursiveSetting) {
-                field = value
-                recursiveSetting = true
-                radius = value / 2.0
-                recursiveSetting = false
-            }
-            // If recursive setting is true, then we are setting radius. Set the diameter and don't
-            // recurse the radius call.
-            else {
-                field = value
-            }
-        }
+        /** Private default setter to only be used by public custom setter. */
+        @JvmName("innerSetDiameter")
+        private set
 
     /** Radius for the ball. */
     var radius: Double = diameter / 2.0
-        /** Custom setter to ensure diameter is accurate. */
-        set(value) {
-            // If recursive setting is false, then we are setting radius. Set the radius, set
-            // recursive setting to true, set the diameter, and then set recursive setting back to
-            // false.
-            if (!recursiveSetting) {
-                field = value
-                recursiveSetting = true
-                diameter = value * 2.0
-                recursiveSetting = false
-            }
-            // If recursive setting is true, then we are setting diameter. Set the radius and don't
-            // recurse the diameter call.
-            else {
-                field = value
-            }
-        }
+        /** Private default setter to only be used by public custom setter. */
+        @JvmName("innerSetRadius")
+        private set
 
     /**
-     * Hack to prevent recursive setting of diameter and radius.
+     * Setter for radius that ensures diamter is set at the same time.
+     * @param radius Radius for the ball.
      */
-    private var recursiveSetting: Boolean = false
+    @JvmName("setRadius")
+    fun setRadius(radius: Double) {
+        this.radius = radius
+        this.diameter = radius * 2.0
+    }
 
-    /** Dummy field for unit tests. */
+    /**
+     * Setter for diamter that ensures radius is set at the same time.
+     * @param diameter Diameter for the ball.
+     */
+    @JvmName("setDiameter")
+    fun setDiameter(diameter: Double) {
+        this.diameter = diameter
+        this.radius = diameter / 2.0
+    }
+
     var xSpeed: Double = 0.0
 
     /** Dummy field for unit tests. */
@@ -126,6 +112,5 @@ class Ball constructor(
         xSpeed = Math.random() * maxSpeed
         ySpeed = Math.random() * maxSpeed
     }
-
 
 }
