@@ -26,6 +26,8 @@ class Ball constructor(
     diameter: Double = 25.0,
     /** Color of the ball. */
     var color: Color = Color.RED,
+    /** Optional path to an image to be enscribed in the ball. */
+    val imagePath: String? = null
 ) : com.gyoge.itcsgraphics.drawables.Drawable {
 
     /** Diameter for the ball. */
@@ -72,9 +74,6 @@ class Ball constructor(
      * Hack to prevent recursive setting of diameter and radius.
      */
     private var recursiveSetting: Boolean = false
-
-    /** Optional path to an image to be enscribed in the ball. */
-    var imagePath: String? = null
 
     /** Dummy field for unit tests. */
     var xSpeed: Double = 0.0
