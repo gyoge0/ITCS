@@ -30,6 +30,15 @@ class Ball constructor(
     val imagePath: String? = null
 ) : com.gyoge.itcsgraphics.drawables.Drawable {
 
+    constructor(
+        x: Int = 0,
+        y: Int = 0,
+        diameter: Int = 25,
+        color: Color = Color.RED
+    ) : this(
+        x.toDouble(), y.toDouble(), diameter.toDouble(), color
+    )
+
     /** Diameter for the ball. */
     var diameter: Double = diameter
         /** Private default setter to only be used by public custom setter. */
