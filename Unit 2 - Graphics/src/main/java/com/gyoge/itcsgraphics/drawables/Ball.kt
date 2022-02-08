@@ -1,5 +1,7 @@
 package com.gyoge.itcsgraphics.drawables
 
+import com.gyoge.itcsgraphics.animators.Animator
+import com.gyoge.itcsgraphics.animators.BouncingBallAnimator
 import java.awt.Color
 import java.awt.Graphics
 import javax.swing.ImageIcon
@@ -71,6 +73,7 @@ class Ball constructor(
         this.radius = diameter / 2.0
     }
 
+    /** Dummy field for unit tests. */
     var xSpeed: Double = 0.0
 
     /** Dummy field for unit tests. */
@@ -99,6 +102,39 @@ class Ball constructor(
             )
         }
 
+    }
+
+    /**
+     * Basically a dummy method for the requirements. Should not be used in the actual program in favor of just instantiating an animator directly.
+     *
+     * @param rightEdge Width of the canvas.
+     * @param bottomEdge Height of the canvas.
+     */
+    @Deprecated("Use an animator object directly instead.")
+    fun move(rightEdge: Int = 400, bottomEdge: Int = 400) {
+        val animator: Animator = BouncingBallAnimator(
+            this.xSpeed,
+            this.ySpeed,
+            this.x,
+            this.y,
+            this.diameter,
+            this.color,
+            this.imagePath
+        )
+
+        val dummy: Ball = animator.getDrawable(
+            hashMapOf<String?, Any?>(
+                "WIDTH" to rightEdge,
+                "HEIGHT" to bottomEdge
+            )
+        ) as Ball
+
+        this.xSpeed = dummy.xSpeed
+        this.ySpeed = dummy.ySpeed
+        this.x = dummy.x
+        this.y = dummy.y
+        this.diameter = dummy.diameter
+        this.color = dummy.color
     }
 
     /**
