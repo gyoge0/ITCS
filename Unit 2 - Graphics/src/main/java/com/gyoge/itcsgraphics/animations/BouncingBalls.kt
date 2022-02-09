@@ -80,9 +80,13 @@ class BouncingBalls : Animation() {
 
     }
 
+        @JvmStatic
+        fun main(args: Array<String>) {
+            val animation: Animation = BouncingBalls()
+            startUp(animation, LiftOff.WIDTH, LiftOff.HEIGHT)
+        }
+
+    }
+
 }
 
-fun main() {
-    val animation: Animation = BouncingBalls()
-    Animation.startUp(animation, LiftOff.WIDTH, LiftOff.HEIGHT)
-}
