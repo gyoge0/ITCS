@@ -12,6 +12,7 @@ import kotlin.math.sqrt
  *
  * @see Drawable
  * @see com.gyoge.itcsgraphics.animators.BouncingBallAnimator
+ * @see com.gyoge.itcsgraphics.animators.GravityBallAnimator
  * @author Yogesh Thambidurai
  */
 @Suppress(
