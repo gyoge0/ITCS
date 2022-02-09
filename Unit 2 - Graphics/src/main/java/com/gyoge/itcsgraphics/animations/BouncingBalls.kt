@@ -4,7 +4,7 @@ import com.gyoge.itcsgraphics.animators.Animator
 import com.gyoge.itcsgraphics.animators.BouncingBallAnimator
 import java.awt.Color
 import java.awt.image.BufferedImage
-import java.util.*
+import java.util.Random
 
 /**
  * A bunch of bouncing balls.
@@ -76,9 +76,7 @@ class BouncingBalls : Animation() {
 
         const val FPS = 60
 
-        private val random = Random()
-
-    }
+        val random = Random()
 
         @JvmStatic
         fun main(args: Array<String>) {
