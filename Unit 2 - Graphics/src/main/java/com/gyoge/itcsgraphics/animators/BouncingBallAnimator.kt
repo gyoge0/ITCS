@@ -1,13 +1,14 @@
 package com.gyoge.itcsgraphics.animators
 
-import com.gyoge.itcsgraphics.drawables.Drawable
 import com.gyoge.itcsgraphics.drawables.Ball
+import com.gyoge.itcsgraphics.drawables.Drawable
 import java.awt.Color
 
 /**
  * Animator for a bouncing ball.
  *
  * @see Animator
+ * @author Yogesh Thambidurai
  * @see Ball
  */
 class BouncingBallAnimator(
