@@ -7,7 +7,7 @@ import java.awt.Font
 import java.awt.image.BufferedImage
 import java.util.Random
 
-class GravityBall : Animation() {
+class GravityBalls : Animation() {
     /**
      * Constructor to start the animation.
      */
@@ -102,7 +102,7 @@ class GravityBall : Animation() {
 
         @JvmStatic
         fun main(args: Array<String>) {
-            val animation: Animation = GravityBall()
+            val animation: Animation = GravityBalls()
             startUp(animation, LiftOff.WIDTH, LiftOff.HEIGHT)
         }
 
