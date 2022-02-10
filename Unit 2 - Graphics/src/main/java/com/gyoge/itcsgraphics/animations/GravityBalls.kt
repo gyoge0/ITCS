@@ -5,7 +5,7 @@ import com.gyoge.itcsgraphics.animators.GravityBallAnimator
 import java.awt.Color
 import java.awt.Font
 import java.awt.image.BufferedImage
-import java.util.Random
+import java.util.*
 
 class GravityBalls : Animation() {
     /**
