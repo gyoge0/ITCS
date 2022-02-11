@@ -8,9 +8,9 @@ import kotlin.math.sin
 
 @Suppress("unused")
 class GravityBallAnimator(
-    /** Current X Velocity of the ball */
+    /** Current X Velocity of the ball. */
     var xSpeed: Double = 1.0,
-    /** Current Y Velocity of the ball */
+    /** Current Y Velocity of the ball. */
     var ySpeed: Double = 1.0,
     private var xAcceleration: Double = 0.0,
     private var yAcceleration: Double = 0.0,
@@ -20,13 +20,13 @@ class GravityBallAnimator(
     y: Double = 0.0,
     /** Diamter of the ball. */
     diameter: Double = 25.0,
-    /** Energy loss */
+    /** Energy loss. */
     val elasticity: Double = 1.0,
     /** Color of the ball. */
     color: Color = Color.RED,
     /** Optional path to an image to be enscribed in the ball. */
     imagePath: String? = null,
-    /** String used to identify dt */
+    /** String used to identify dt. */
     private val dtIdentifier: String = "DT"
 ) : Animator {
 
