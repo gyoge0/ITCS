@@ -48,12 +48,7 @@ class GravityBallAnimator(
         ySpeed = speed * sin(Math.toRadians(angle.toDouble()))
     }
 
-    private val drawable: Ball
-
-
-    init {
-        drawable = Ball(x, y, diameter, color, imagePath)
-    }
+    private val drawable: Ball = Ball(x, y, diameter, color, imagePath)
 
     @Suppress("DuplicatedCode")
     override fun getDrawable(params: HashMap<String, Any>): Drawable {
