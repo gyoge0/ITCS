@@ -5,7 +5,9 @@
   <artifactId>unit-two-graphics</artifactId>
 
   <build>
+
     <plugins>
+
       <plugin>
         <artifactId>kotlin-maven-plugin</artifactId>
         <configuration>
@@ -32,20 +34,24 @@
       </plugin>
 
     </plugins>
+
   </build>
 
   <dependencies>
+
     <dependency>
       <artifactId>kotlin-stdlib-jdk8</artifactId>
       <groupId>org.jetbrains.kotlin</groupId>
       <version>${kotlin.version}</version>
     </dependency>
+
     <dependency>
       <artifactId>kotlin-test</artifactId>
       <groupId>org.jetbrains.kotlin</groupId>
       <scope>test</scope>
       <version>${kotlin.version}</version>
     </dependency>
+
   </dependencies>
 
   <groupId>com.gyoge</groupId>
