@@ -35,7 +35,6 @@ class FalconNine : Animation() {
     override fun tick() {
         val animator = animators[0] as FalconNineAnimator
         val drawable = animator.getDrawable(params)
-        println(animator.alt)
 
         drawable.draw(goon)
 
