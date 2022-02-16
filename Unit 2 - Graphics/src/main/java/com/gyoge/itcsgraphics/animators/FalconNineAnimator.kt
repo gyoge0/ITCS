@@ -50,68 +50,46 @@ class FalconNineAnimator(
     /** Assuming the frontal area is the width squared of the spaceship. */
     private val frontalArea = drawable.width.toDouble().pow(2.0)
 
+    fun getStage(): Int {
+        // return 2 if time.seconds is greater than 162, otherwise return 1
+        return if (time.seconds > 162) 2 else 1
+
+    }
+
     /** Do the math and then update the drawable. */
     override fun getDrawable(params: HashMap<String, Any>): Drawable {
         val sec = (time.seconds)
-
-        if (sec.toDouble() > 162) {
+        if (time.seconds > 397) {
             return drawable
         }
 
-        val mass = START_MASS - (FUEL_BURN_RATE * (sec))
+        var mass: Double = 541300 - (398900 / 162 * (sec)).toDouble()
+        var thrust = 6806000.0
 
-        val fG = mass * BIG_G * MASS_EARTH / ((RAD_EARTH + alt).pow(2.0))
+        if (sec.toDouble() > 162) {
+            mass = 96570 - ((92670 / (397 - 162)) * (sec.toDouble() - 162))
+            thrust = 934000.0
+        }
 
-        val fD = (0.5) * DRAG_COEFFICIENT * frontalArea * getDensity(alt) * vel.pow(2.0)
+        val fG = mass * 6.67e-11 * 5.978e24 / ((6.38e6 + alt).pow(2.0))
 
-        val net = THRUST - fG - fD
+        val fD = (0.5) * 0.295 * frontalArea * getDensity(alt) * vel.pow(2.0)
+
+        val net = thrust - fG - fD
 
         accel = net / mass
         vel += accel * dT.toNanos().toDouble() / 1e9
         alt += vel * dT.toNanos().toDouble() / 1e9
 
-        time += dT
+        time = time.plus(dT)
 
-        drawable.y = alt * 100000 / (params["HEIGHT"] as Int)
+        drawable.y = (alt * 100000 / (params["HEIGHT"] as Int)) - drawable.height
 
         return drawable
     }
 
 
-    /** Calculates force due to gravity using the Earth, the mass of the spaceship, and the altitude. */
-    private fun calcFg(): Double =
-        calcFg(
-            MASS_EARTH,
-            START_MASS - (FUEL_BURN_RATE * time.seconds),
-            RAD_EARTH + alt
-        )
-
     private companion object {
-        /** Mass of the Earth. */
-        const val MASS_EARTH = 5.978e24
-
-        /** Starting mass of the spaceship. */
-        var START_MASS = 541300
-
-        /** Gravitational constant. */
-        private const val BIG_G = 6.67e-11
-
-        /** Radius of the Earth. */
-        const val RAD_EARTH = 6.38e6
-
-        /** Kg of fuel burned per second. */
-        const val FUEL_BURN_RATE: Double = 398900.0 / 162.0
-
-        /** Force due to thrust. */
-        const val THRUST = 6806000
-
-        /**
-         * Drag coefficient from <a href="https://www.grc.nasa.gov/www/k-12/rocket/shaped.html">NASA</a>.
-         * 0.295 (from the bullet) is used because it is most similar here to the actual Falcon 9.
-         * The value can be swapped to something more accurate to the actual Falcon 9 or to the
-         * pyramid used in the drawing.
-         */
-        const val DRAG_COEFFICIENT = 0.295
 
         /**
          * Calculates the air density at a given altitude.
@@ -124,12 +102,6 @@ class FalconNineAnimator(
          */
         fun getDensity(alt: Double): Double {
             return 1.2787 * Math.E.pow(-0.000114616 * alt)
-        }
-
-        /** Calculates gravitational force between 2 masses some distance apart. */
-        @JvmStatic
-        fun calcFg(mass1: Double, mass2: Double, distance: Double): Double {
-            return mass1 * (mass2) * (BIG_G) / distance.pow(2.0)
         }
 
     }
