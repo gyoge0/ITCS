@@ -2,10 +2,9 @@ package com.gyoge.itcsgraphics.animators
 
 import com.gyoge.itcsgraphics.drawables.Drawable
 import com.gyoge.itcsgraphics.drawables.Spaceship
-import java.math.BigDecimal
-import java.math.RoundingMode
 import java.time.Duration
 import java.time.temporal.ChronoUnit
+import kotlin.math.pow
 
 /**
  * A laws-of-physics-obeying animator a spaceship.
@@ -22,7 +21,8 @@ class FalconNineAnimator(
     y: Int = 0,
     width: Int = 50,
     height: Int = 100,
-    dT: ChronoUnit = ChronoUnit.SECONDS,
+    /** Change in time for each frame. */
+    private val dT: Duration = ChronoUnit.SECONDS.duration,
 ) : Animator {
 
     val drawable = Spaceship()
@@ -34,107 +34,76 @@ class FalconNineAnimator(
         drawable.height = height
     }
 
-    /** Mass of the spaceship. */
-    var mass = BigDecimal("541300")
 
     /** Velocity of the spaceship. */
-    private var vel = BigDecimal("0")
+    private var vel = 0.0
 
     /** Acceleration of the spaceship. */
-    private var accel = BigDecimal("0")
+    private var accel = 0.0
 
     /** Altitude of the spaceship. */
-    var alt = BigDecimal("0")
+    var alt = 0.0
 
-    private var time = Duration.ZERO
-
-    /** Change in time for each frame. */
-    val dT: Duration = dT.duration
+    /** Time elapsed. */
+    var time: Duration = Duration.ZERO
 
     /** Assuming the frontal area is the width squared of the spaceship. */
-    private val frontalArea = BigDecimal(drawable.width).pow(2)
+    private val frontalArea = drawable.width.toDouble().pow(2.0)
 
+    /** Do the math and then update the drawable. */
     override fun getDrawable(params: HashMap<String, Any>): Drawable {
-        if (time.seconds > 162) {
+        val sec = (time.seconds)
+
+        if (sec.toDouble() > 162) {
             return drawable
         }
-        mass = mass.minus(FUEL_BURN_RATE.multiply(BigDecimal(dT.seconds)))
 
-        val fG = -calcFg()
-        val fT = THRUST
-        // TODO: drag broken
-//        val fD = vel
-//            .pow(2)
-//            .multiply(DRAG_COEFFICIENT)
-//            .multiply(frontalArea)
-//            .multiply(closestDensity(alt))
-//            .divide(BigDecimal(2), 5, RoundingMode.UP)
-//            .multiply(BigDecimal(-1))
-//        accel = calcAccel(fG, fT, fD)
+        val mass = START_MASS - (FUEL_BURN_RATE * (sec))
 
-        accel = calcAccel(fG, fT)
-        vel = vel.add(accel)
-        alt = alt.add(vel)
-        println(drawable.y)
+        val fG = mass * BIG_G * MASS_EARTH / ((RAD_EARTH + alt).pow(2.0))
 
-        params["HEIGHT"] as Int + drawable.height - alt.toDouble()
+        val fD = (0.5) * DRAG_COEFFICIENT * frontalArea * getDensity(alt) * vel.pow(2.0)
 
-        time = time.plus(dT)
+        val net = THRUST - fG - fD
+
+        accel = net / mass
+        vel += accel * dT.toNanos().toDouble() / 1e9
+        alt += vel * dT.toNanos().toDouble() / 1e9
+
+        time += dT
+
+        drawable.y = alt * 100000 / (params["HEIGHT"] as Int)
 
         return drawable
     }
 
 
     /** Calculates force due to gravity using the Earth, the mass of the spaceship, and the altitude. */
-    private fun calcFg(): BigDecimal = calcFg(MASS_EARTH, mass, RAD_EARTH + alt)
-
-    /** Calculate acceleration from a list of forces. */
-    private fun calcAccel(vararg forces: BigDecimal): BigDecimal {
-        var sum = BigDecimal("0")
-        for (force in forces) {
-            sum = sum.plus(force)
-        }
-        return sum
-    }
+    private fun calcFg(): Double =
+        calcFg(
+            MASS_EARTH,
+            START_MASS - (FUEL_BURN_RATE * time.seconds),
+            RAD_EARTH + alt
+        )
 
     private companion object {
         /** Mass of the Earth. */
-        val MASS_EARTH = BigDecimal("5.978e24")
+        const val MASS_EARTH = 5.978e24
+
+        /** Starting mass of the spaceship. */
+        var START_MASS = 541300
 
         /** Gravitational constant. */
-        private val BIG_G = BigDecimal("6.67e-11")
+        private const val BIG_G = 6.67e-11
 
         /** Radius of the Earth. */
-        val RAD_EARTH = BigDecimal("6.38e6")
+        const val RAD_EARTH = 6.38e6
 
         /** Kg of fuel burned per second. */
-        val FUEL_BURN_RATE: BigDecimal = BigDecimal("398900").divide(BigDecimal("162"), 5, RoundingMode.UP)
+        const val FUEL_BURN_RATE: Double = 398900.0 / 162.0
 
         /** Force due to thrust. */
-        val THRUST = BigDecimal("6806000")
-
-        /** Densities at different altitues from the US Standard Atmosphere Air Properties. */
-        private val DENSITIES = hashMapOf(
-            BigDecimal("1000") to BigDecimal(1.112),
-            BigDecimal("2000") to BigDecimal(1.007),
-            BigDecimal("3000") to BigDecimal(0.9093),
-            BigDecimal("4000") to BigDecimal(0.8194),
-            BigDecimal("5000") to BigDecimal(0.7364),
-            BigDecimal("6000") to BigDecimal(0.6601),
-            BigDecimal("7000") to BigDecimal(0.5900),
-            BigDecimal("8000") to BigDecimal(0.5258),
-            BigDecimal("9000") to BigDecimal(0.4671),
-            BigDecimal("10000") to BigDecimal(0.4135),
-            BigDecimal("15000") to BigDecimal(0.1948),
-            BigDecimal("20000") to BigDecimal(0.08891),
-            BigDecimal("25000") to BigDecimal(0.04008),
-            BigDecimal("30000") to BigDecimal(0.01841),
-            BigDecimal("40000") to BigDecimal(0.003996),
-            BigDecimal("50000") to BigDecimal(0.001027),
-            BigDecimal("60000") to BigDecimal(0.0003097),
-            BigDecimal("70000") to BigDecimal(0.00008283),
-            BigDecimal("80000") to BigDecimal(0.00001846),
-        )
+        const val THRUST = 6806000
 
         /**
          * Drag coefficient from <a href="https://www.grc.nasa.gov/www/k-12/rocket/shaped.html">NASA</a>.
@@ -142,39 +111,25 @@ class FalconNineAnimator(
          * The value can be swapped to something more accurate to the actual Falcon 9 or to the
          * pyramid used in the drawing.
          */
-        val DRAG_COEFFICIENT = BigDecimal("0.295")
+        const val DRAG_COEFFICIENT = 0.295
 
         /**
-         * Binary searches densities to find the closest density for a given altitude.
+         * Calculates the air density at a given altitude.
+         *
+         * Calculated using an Ae^Bx regression, whose coefficients were obtained from Coseen.
+         *
+         * A = 1.2787, B = -0.0018
+         *
+         * @author Coseen
          */
-        @JvmStatic
-        fun closestDensity(alt: BigDecimal): BigDecimal {
-            val keys = DENSITIES.keys.sorted()
-            var min = 0
-            var max: Int = keys.size - 1
-            var mid = 0
-
-            while(min <= max) {
-                mid = ((max + min) / 2)
-                if (keys[mid] == alt) {
-                    return DENSITIES[alt]!!
-                } else if (keys[mid] < alt) {
-                    min = mid + 1
-                } else {
-                    max = mid - 1
-                }
-            }
-
-            return DENSITIES[keys[mid]] ?: BigDecimal.ZERO
-
+        fun getDensity(alt: Double): Double {
+            return 1.2787 * Math.E.pow(-0.000114616 * alt)
         }
 
         /** Calculates gravitational force between 2 masses some distance apart. */
         @JvmStatic
-        fun calcFg(mass1: BigDecimal, mass2: BigDecimal, distance: BigDecimal): BigDecimal {
-            println((mass1.toDouble() * mass2.toDouble() * BIG_G.toDouble())/(distance.toDouble() * distance.toDouble()))
-            println((mass1.multiply(mass2).multiply(BIG_G)).divide(distance.pow(2), 5, RoundingMode.UP))
-            return mass1.multiply(mass2).multiply(BIG_G).divide(distance.pow(2), 5, RoundingMode.UP)
+        fun calcFg(mass1: Double, mass2: Double, distance: Double): Double {
+            return mass1 * (mass2) * (BIG_G) / distance.pow(2.0)
         }
 
     }

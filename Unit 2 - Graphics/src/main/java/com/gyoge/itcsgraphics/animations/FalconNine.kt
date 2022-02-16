@@ -4,6 +4,7 @@ import com.gyoge.itcsgraphics.animators.FalconNineAnimator
 import java.awt.Color
 import java.awt.Font
 import java.awt.image.BufferedImage
+import java.time.Duration
 import java.time.temporal.ChronoUnit
 
 class FalconNine : Animation() {
@@ -25,16 +26,16 @@ class FalconNine : Animation() {
         animators = listOf(
             FalconNineAnimator(
                 WIDTH / 2, HEIGHT,
-                50, 100,
+                6, 100,
                 DT,
             )
         ).toTypedArray()
-
     }
 
     override fun tick() {
         val animator = animators[0] as FalconNineAnimator
         val drawable = animator.getDrawable(params)
+        println(animator.alt)
 
         drawable.draw(goon)
 
@@ -45,7 +46,16 @@ class FalconNine : Animation() {
         // Draw average vlues
         goon.color = Color.WHITE
         goon.font = Font("Comic Sans MS", Font.BOLD, 16)
-        goon.drawString("Delta time: ${(animators[0] as FalconNineAnimator).dT.toSeconds() * FPS} second(s)", 10, 30 + 10)
+        goon.drawString(
+            "Delta time: ${
+                (animators[0] as FalconNineAnimator)
+                    .time
+                    .toNanos().toDouble()
+                        / 1e9
+            } second(s)",
+            10,
+            30 + 10
+        )
 
     }
 
@@ -55,9 +65,9 @@ class FalconNine : Animation() {
 
         const val HEIGHT = 800
 
-        const val FPS = 1
+        const val FPS = 60
 
-        val DT = ChronoUnit.MILLIS
+        val DT: Duration = ChronoUnit.MILLIS.duration.multipliedBy(10L)
 
         @JvmStatic
         fun main(args: Array<String>) {
