@@ -1,11 +1,14 @@
 package com.gyoge.itcsgraphics.animations
 
+import com.gyoge.itcsgraphics.animators.Animator
 import com.gyoge.itcsgraphics.animators.FalconNineAnimator
+import com.gyoge.itcsgraphics.animators.SnowflakeAnimator
 import java.awt.Color
 import java.awt.Font
 import java.awt.image.BufferedImage
 import java.time.Duration
 import java.time.temporal.ChronoUnit
+import java.util.*
 
 class FalconNine : Animation() {
     init {
@@ -22,25 +25,40 @@ class FalconNine : Animation() {
         // Set name
         setShownName("Falcon 9")
 
-        params = hashMapOf("HEIGHT" to HEIGHT, "WIDTH" to WIDTH)
-        animators = listOf(
+        params = hashMapOf("HEIGHT" to HEIGHT, "WIDTH" to WIDTH, "dummy" to 0.0)
+
+        val animatorsAL = arrayListOf<Animator>(
             FalconNineAnimator(
                 WIDTH / 2, HEIGHT,
-                6, 100,
+                6, 25,
                 DT,
             )
-        ).toTypedArray()
+        )
+
+        // Who doesn't love repurposed snowflakes?
+        for (i in 0..99) {
+            animatorsAL.add(
+                SnowflakeAnimator(
+                    random.nextInt(WIDTH),
+                    random.nextInt(HEIGHT / 2),
+                    "dummy",
+                    "dummy"
+                )
+            )
+        }
+
+        animators = animatorsAL.toTypedArray()
     }
 
     override fun tick() {
-        val animator = animators[0] as FalconNineAnimator
-        val drawable = animator.getDrawable(params)
-
-        drawable.draw(goon)
-
         // Draw background
         goon.color = Color.BLACK
         goon.fillRect(0, 0, WIDTH, HEIGHT)
+
+
+        for (animator in animators) {
+            animator.getDrawable(params).draw(goon)
+        }
 
         // Draw average vlues
         goon.color = Color.WHITE
@@ -56,6 +74,8 @@ class FalconNine : Animation() {
             30 + 10
         )
 
+        goon.drawString("Phase: ${(animators[0] as FalconNineAnimator).getStage()}", 10, 50 + 10)
+
     }
 
 
@@ -66,7 +86,9 @@ class FalconNine : Animation() {
 
         const val FPS = 60
 
-        val DT: Duration = ChronoUnit.MILLIS.duration.multipliedBy(10L)
+        val random = Random()
+
+        val DT: Duration = ChronoUnit.SECONDS.duration
 
         @JvmStatic
         fun main(args: Array<String>) {
