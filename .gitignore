@@ -3,6 +3,7 @@
 
 # Testing folders
 Unit 2 - Graphics/src/test/java/
+Unit 2 - Fundamentals/src/test/java/
 
 # Compiled class file
 *.class
@@ -167,5 +168,7 @@ dmypy.json
 cython_debug/
 
 
+Linting stuff
 /sonarlint/
 /inspectionProfiles/
+*.pb
