@@ -2,6 +2,7 @@ package com.gyoge.itcsgraphics.animations;
 
 import com.gyoge.itcsgraphics.animators.Animator;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -51,7 +52,7 @@ public class Animation extends JPanel {
     /** Default name shown in title bar. */
     protected String shownName = "An Animation";
     /** List of animators for each object drawn. */
-    protected Animator[] animators;
+    protected ArrayList<Animator> animators = new ArrayList<>();
     /** Params with info for each animator. */
     protected HashMap<String, Object> params;
 

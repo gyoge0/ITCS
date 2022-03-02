@@ -1,6 +1,5 @@
 package com.gyoge.itcsgraphics.animations
 
-import com.gyoge.itcsgraphics.animators.Animator
 import com.gyoge.itcsgraphics.animators.GravityBallAnimator
 import java.awt.Color
 import java.awt.Font
@@ -29,8 +28,6 @@ class GravityBalls : Animation() {
         params["HEIGHT"] = HEIGHT
         params["DT"] = FPS.toDouble()
 
-        val animatorsAL = ArrayList<Animator>()
-
         for (i in 1..100) {
             val animator = GravityBallAnimator(
                 0.0,
@@ -46,11 +43,8 @@ class GravityBalls : Animation() {
             )
             animator.setInitialVelocity(random.nextInt(16, 256), random.nextInt(360))
 
-            animatorsAL.add(animator)
+            animators.add(animator)
         }
-
-        // Set animators to the array value of animatorsAL for speed
-        animators = animatorsAL.toTypedArray()
     }
 
     override fun tick() {

@@ -4,7 +4,6 @@ import com.gyoge.itcsgraphics.animators.Animator;
 import com.gyoge.itcsgraphics.animators.SnowflakeAnimator;
 import com.gyoge.itcsgraphics.animators.SpaceshipAnimator;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -78,10 +77,8 @@ public class LiftOff extends Animation {
         this.params.put("WIDTH", WIDTH);
         this.params.put("HEIGHT", HEIGHT);
 
-        // Add in 100 snowflake animators
-        ArrayList<Animator> animatorsAL = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            animatorsAL.add(new SnowflakeAnimator(
+            animators.add(new SnowflakeAnimator(
                 random.nextInt(WIDTH),
                 random.nextInt(HEIGHT),
                 "snowflakeDx",
@@ -90,10 +87,7 @@ public class LiftOff extends Animation {
         }
 
         // Add in 1 spaceship animator
-        animatorsAL.add(new SpaceshipAnimator(WIDTH / 2, 700, "spaceshipDy"));
-
-        // Set animators to the array value of animatorsAL for speed
-        this.animators = animatorsAL.toArray(new Animator[0]);
+        animators.add(new SpaceshipAnimator(WIDTH / 2, 700, "spaceshipDy"));
 
     }
 

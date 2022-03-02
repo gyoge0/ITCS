@@ -1,10 +1,9 @@
 package com.gyoge.itcsgraphics.animations
 
-import com.gyoge.itcsgraphics.animators.Animator
 import com.gyoge.itcsgraphics.animators.BouncingBallAnimator
 import java.awt.Color
 import java.awt.image.BufferedImage
-import java.util.Random
+import java.util.*
 
 /**
  * A bunch of bouncing balls.
@@ -37,9 +36,8 @@ class BouncingBalls : Animation() {
         params["HEIGHT"] = HEIGHT
 
         // Add in 100 bouncing balls
-        val animatorsAL = ArrayList<Animator>()
         for (i in 0..100) {
-            animatorsAL.add(
+            animators.add(
                 BouncingBallAnimator(
                     (random.nextDouble(25.0) + 0.01) - 12.5,
                     (random.nextDouble(25.0) + 0.01) - 12.5,
@@ -52,9 +50,6 @@ class BouncingBalls : Animation() {
             )
         }
 
-
-        // Set animators to the array value of animatorsAL for speed
-        animators = animatorsAL.toTypedArray()
     }
 
     override fun tick() {
