@@ -1,15 +1,15 @@
 package com.gyoge.itcsgraphics.animations
 
+import com.gyoge.itcsgraphics.animators.Animator
 import com.gyoge.itcsgraphics.animators.BouncingBallAnimator
 import com.gyoge.itcsgraphics.animators.JumpingBallAnimator
 import com.gyoge.itcsgraphics.drawables.Ball
 import java.awt.Color
-import java.awt.Font
 import java.awt.image.BufferedImage
 import java.util.*
 
 @Suppress("DuplicatedCode")
-class JumpingBalls : Animation() {
+class HailHydra : Animation() {
 
     /**
      * Constructor to start the animation.
@@ -26,7 +26,7 @@ class JumpingBalls : Animation() {
         goon = bufferedImage.graphics
 
         // Set name
-        setShownName("Jumping Balls")
+        setShownName("Hail Hydra")
         params = HashMap()
         params["WIDTH"] = WIDTH
         params["HEIGHT"] = HEIGHT
@@ -54,6 +54,7 @@ class JumpingBalls : Animation() {
     }
 
     override fun tick() {
+        params["animators"] = animators
         // Draw background
         goon.color = Color.WHITE
         goon.fillRect(0, 0, WIDTH, HEIGHT)
@@ -75,10 +76,8 @@ class JumpingBalls : Animation() {
             }
         }
 
-        goon.color = Color.BLACK
-        goon.font = Font("Comic Sans MS", Font.BOLD, 16)
-
-        goon.drawString("Hits: ${params["hits"]}", 10, 10 + 10)
+        @Suppress("UNCHECKED_CAST")
+        animators = params["animators"] as ArrayList<Animator>
     }
 
 
@@ -94,13 +93,13 @@ class JumpingBalls : Animation() {
         const val FPS = 60
 
         const val BOUNCERS = 1
-        const val JUMPERS = 5
+        const val JUMPERS = 2
 
         val random = Random()
 
         @JvmStatic
         fun main(args: Array<String>) {
-            val animation: Animation = JumpingBalls()
+            val animation: Animation = HailHydra()
             startUp(animation, LiftOff.WIDTH, LiftOff.HEIGHT)
         }
 

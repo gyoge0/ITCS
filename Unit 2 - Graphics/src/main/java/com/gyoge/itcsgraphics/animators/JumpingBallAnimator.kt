@@ -4,7 +4,6 @@ import com.gyoge.itcsgraphics.drawables.Ball
 import com.gyoge.itcsgraphics.drawables.Drawable
 import java.awt.Color
 import java.util.*
-import kotlin.collections.HashMap
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -22,27 +21,42 @@ class JumpingBallAnimator(
 ) : Animator {
 
     private val drawable: Ball = Ball(x, y, diameter, color, imagePath)
-    private var collissions = 0
 
     @Suppress("DuplicatedCode")
     override fun getDrawable(params: HashMap<String, Any>): Drawable {
+        val diameter = this.drawable.diameter
+
         if (this.intersectsWith(params["ball"] as Ball)) {
+            val width = (params["WIDTH"] as Int).toDouble()
+            val height = (params["HEIGHT"] as Int).toDouble()
+
             this.drawable.x =
-                random.nextDouble((params["WIDTH"] as Int).toDouble() - this.drawable.diameter) + this.drawable.diameter / 2
+                random.nextDouble(width - diameter) + diameter / 2
             this.drawable.y =
-                random.nextDouble((params["HEIGHT"] as Int).toDouble() - this.drawable.diameter) + this.drawable.diameter / 2
+                random.nextDouble(height - diameter) + diameter / 2
 
             if (this.color == drawable.color) {
                 this.drawable.color = Color.BLUE
             } else {
                 this.drawable.color = this.color
             }
-            params["hits"] = (params["hits"] as Int) + 1
-            this.collissions++
+
+            @Suppress("UNCHECKED_CAST")
+            (params["animators"] as ArrayList<Animator>).add(
+                JumpingBallAnimator(
+                    random.nextDouble(width - diameter) + diameter / 2,
+                    random.nextDouble(height - diameter) + diameter / 2,
+                    diameter / 2,
+                    this.color,
+
+                    )
+            )
+
+            this.drawable.setDiameter(diameter / 5)
         }
-        if (this.collissions >= 5) {
-            this.drawable.x = -this.drawable.diameter / 2
-            this.drawable.y = -this.drawable.diameter / 2
+        if (this.drawable.diameter <= 10) {
+            this.drawable.x = -500.0
+            this.drawable.y = -500.0
         }
 
         return this.drawable
