@@ -8,6 +8,15 @@ public class BingoCard {
 
     String[][] card = new String[6][5];
 
+    public static void main(String[] args) {
+        for (int i = 0; i < 3; i++) {
+            BingoCard b = new BingoCard();
+            b.generateBingoCard();
+            b.displayCard();
+            System.out.println();
+        }
+    }
+
     public String[][] getCard() {
         return card;
     }
@@ -36,15 +45,15 @@ public class BingoCard {
             }
         }
 
-//        why not?
-//        card = new String[][]{
-//            {"B", "I", "N", "G", "O"},
-//            {r.m(1, 15), r.m(16, 30), r.m(31, 45), r.m(46, 60), r.m(61, 75)},
-//            {r.m(1, 15), r.m(16, 30), r.m(31, 45), r.m(46, 60), r.m(61, 75)},
-//            {r.m(1, 15), r.m(16, 30), "F", r.m(46, 60), r.m(61, 75)},
-//            {r.m(1, 15), r.m(16, 30), r.m(31, 45), r.m(46, 60), r.m(61, 75)},
-//            {r.m(1, 15), r.m(16, 30), r.m(31, 45), r.m(46, 60), r.m(61, 75)}
-//        };
+//                why not?
+//                card = new String[][]{
+//                    {"B", "I", "N", "G", "O"},
+//                    {r.m(1, 15), r.m(16, 30), r.m(31, 45), r.m(46, 60), r.m(61, 75)},
+//                    {r.m(1, 15), r.m(16, 30), r.m(31, 45), r.m(46, 60), r.m(61, 75)},
+//                    {r.m(1, 15), r.m(16, 30), "F", r.m(46, 60), r.m(61, 75)},
+//                    {r.m(1, 15), r.m(16, 30), r.m(31, 45), r.m(46, 60), r.m(61, 75)},
+//                    {r.m(1, 15), r.m(16, 30), r.m(31, 45), r.m(46, 60), r.m(61, 75)}
+//                };
 
         return card;
     }
@@ -55,15 +64,6 @@ public class BingoCard {
                 System.out.print(j + "\t");
             }
             System.out.print("\n");
-        }
-    }
-
-    public static void main(String[] args) {
-        for (int i = 0; i < 3; i++) {
-            BingoCard b = new BingoCard();
-            b.generateBingoCard();
-            b.displayCard();
-            System.out.println();
         }
     }
 
@@ -81,7 +81,6 @@ public class BingoCard {
                 }
             }
         }
-
 
     }
 
