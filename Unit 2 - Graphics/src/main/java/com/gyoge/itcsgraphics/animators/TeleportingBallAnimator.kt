@@ -8,7 +8,7 @@ import kotlin.math.pow
 import kotlin.math.sqrt
 
 @Suppress("unused")
-class JumpingBallAnimator(
+class TeleportingBallAnimator(
     /** X coordinate of the center of the ball. */
     x: Double = 0.0,
     /** Y coordinate of the center of the ball. */
@@ -43,7 +43,7 @@ class JumpingBallAnimator(
 
             @Suppress("UNCHECKED_CAST")
             (params["animators"] as ArrayList<Animator>).add(
-                JumpingBallAnimator(
+                TeleportingBallAnimator(
                     random.nextDouble(width - diameter) + diameter / 2,
                     random.nextDouble(height - diameter) + diameter / 2,
                     diameter / 2,
