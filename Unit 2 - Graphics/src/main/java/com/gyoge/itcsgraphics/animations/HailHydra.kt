@@ -2,7 +2,7 @@ package com.gyoge.itcsgraphics.animations
 
 import com.gyoge.itcsgraphics.animators.Animator
 import com.gyoge.itcsgraphics.animators.BouncingBallAnimator
-import com.gyoge.itcsgraphics.animators.JumpingBallAnimator
+import com.gyoge.itcsgraphics.animators.TeleportingBallAnimator
 import com.gyoge.itcsgraphics.drawables.Ball
 import java.awt.Color
 import java.awt.image.BufferedImage
@@ -43,7 +43,7 @@ class HailHydra : Animation() {
 
         for (i in 1..JUMPERS) {
             animators.add(
-                JumpingBallAnimator(
+                TeleportingBallAnimator(
                     WIDTH.toDouble() / 2 + i, HEIGHT.toDouble() / 2 + i, 150.0,
                     Color(random.nextInt(255 / i), random.nextInt(255 / i), random.nextInt(255 / i))
                 )
@@ -69,7 +69,7 @@ class HailHydra : Animation() {
         }
 
         for (i in BOUNCERS until animators.size) {
-            val animator = (animators[i] as JumpingBallAnimator)
+            val animator = (animators[i] as TeleportingBallAnimator)
             for (ball in balls) {
                 params["ball"] = ball
                 animator.getDrawable(params).draw(goon)
