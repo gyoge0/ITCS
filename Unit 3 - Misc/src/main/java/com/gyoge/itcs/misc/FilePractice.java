@@ -1,4 +1,4 @@
-package com.gyoge.itcsmisc;
+package com.gyoge.itcs.misc;
 
 import java.util.Scanner;
 
