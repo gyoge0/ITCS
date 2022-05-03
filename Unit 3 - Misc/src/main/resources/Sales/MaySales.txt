@@ -1,0 +1,26 @@
+Mary's Grocery
+Sweet Potato
+40
+Idaho Potato
+20
+Green Beans
+500
+
+Jo Jo's Diner
+Green Beans
+250
+Tomato
+100
+Sweet Potato
+75
+
+Reggie's Hangout
+Squash
+150
+Tomato
+50
+Green Beans
+25
+Sweet Potato
+200
+

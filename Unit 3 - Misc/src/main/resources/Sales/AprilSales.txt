@@ -1,0 +1,36 @@
+Mary's Grocery
+Sweet Potato
+20
+Idaho Potato
+30
+Squash
+50
+Tomato
+30
+Green Beans
+50
+
+Jo Jo's Diner
+Tomato
+100
+Sweet Potato
+75
+
+High Top Cafe
+Squash
+30
+Green Beans
+100
+Idaho Potato
+35
+
+Fresh Value Inc
+Squash
+150
+Tomato
+50
+Green Beans
+25
+Sweet Potato
+90
+
