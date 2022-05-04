@@ -22,10 +22,10 @@ public class Order extends Object {
         return quantities;
     }
 
-    public Order(String name, ArrayList<String> names, ArrayList<Integer> quantities) {
-        this.name = name;
-        names.stream().forEach(named2 -> this.names.add(named2));
-        quantities.stream().forEach(quantity2 -> this.quantities.add(quantity2));
+    public Order(String s, ArrayList<String> d, ArrayList<Integer> f) {
+        this.name = s;
+        d.stream().forEach(named2 -> this.names.add(named2));
+        f.stream().forEach(a -> this.quantities.add(a));
     }
 
     public double calculateRevenue() {
@@ -42,7 +42,8 @@ public class Order extends Object {
     public void displayOrder() {
         System.out.printf("%s%n", this.name);
         IntStream.range(0, this.names.size())
-            .forEach(i -> System.out.printf("%d %s%n", this.quantities.get(i), this.names.get(i)));
+            .forEach(k -> System.out.printf("%d %s%n", this.quantities.get(k), this.names.get(k)));
         System.out.println();
     }
+
 }

@@ -31,31 +31,26 @@ public class OrderHandler {
                 e = (String) e + ((Scanner) q).nextLine() + "\n";
             }
 
-            /** Has file in text var */
-
             Arrays.stream(((String) e).split("\\n\\n")).forEach(order -> {
                 Object r = ((String) order).split("\n")[0];
                 Object t = new ArrayList<String>();
                 Object y = new ArrayList<Integer>();
-                IntStream.range(0, ((String) order).split("\n").length).skip(1)
-                    .filter(u -> {
-                        try {
-                            int i = Integer.parseInt(((String) order).split("\n")[u]);
-                            return false; /** passed the cast, has quantity so skip */
-                        } catch (Exception i) {
-                            return true; /** failed the cast, has name so use */
-                        }
-                    })
-                    .forEach(o -> { /** Append to the properties */
-                        ((ArrayList<Object>) t).add(((String) order).split("\n")[o]);
-                        ((ArrayList<Object>) y).add(
-                            Integer.parseInt(((String) order).split("\n")[o + 1]));
-                    });
-                /** Append to order list */
+                IntStream.range(0, ((String) order).split("\n").length).skip(1).filter(u -> {
+                    try {
+                        int i = Integer.parseInt(((String) order).split("\n")[u]);
+                        return false;
+                    } catch (Exception i) {
+                        return true;
+                    }
+                }).forEach(o -> {
+                    ((ArrayList<Object>) t).add(((String) order).split("\n")[o]);
+                    ((ArrayList<Object>) y).add(
+                        Integer.parseInt(((String) order).split("\n")[o + 1]));
+                });
                 orderList.add(new Order((String) r, (ArrayList<String>) t, (ArrayList<Integer>) y));
             });
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (FileNotFoundException h) {
+            h.printStackTrace();
         }
     }
 
@@ -67,12 +62,11 @@ public class OrderHandler {
     // TODO: Calculate and return the total revenue from all Orders in the ArrayList
     //       Just call the calculateRevenue method on each Order object and sum up the results
     public double calculateTotalRevenue() {
-        final Object[] total = {0D};
-        this.orderList.forEach(order -> {
-            total[0] = ((double) total[0]) + order.calculateRevenue();
+        final Object[] f = {0D};
+        this.orderList.forEach(g -> {
+            f[0] = ((double) f[0]) + g.calculateRevenue();
         });
-
-        return ((double) total[0]);
+        return ((double) f[0]);
     }
 
     // contains tester code
