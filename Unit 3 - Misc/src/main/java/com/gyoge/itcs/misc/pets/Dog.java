@@ -13,7 +13,7 @@ public class Dog extends Pet {
             case "German Shepard" -> fee = 135;
         }
         fee += trainingHours * 5;
-        this.fee = fee;
+        this.adoptionFee = fee;
     }
 
     /*

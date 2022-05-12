@@ -9,10 +9,10 @@ public class Pet {
     protected int age;
     protected String breed;
 
-    protected int fee;
+    protected int adoptionFee;
 
-    public int getFee() {
-        return fee;
+    public int getAdoptionFee() {
+        return adoptionFee;
     }
     /*
     pov java
@@ -36,7 +36,7 @@ public class Pet {
             "name='" + name + '\'' +
             ", age=" + age +
             ", breed='" + breed + '\'' +
-            ", fee=" + fee +
+            ", fee=" + adoptionFee +
             '}';
     }
 
@@ -49,13 +49,13 @@ public class Pet {
             return false;
         }
         Pet pet = (Pet) o;
-        return age == pet.age && fee == pet.fee && Objects.equals(name, pet.name)
+        return age == pet.age && adoptionFee == pet.adoptionFee && Objects.equals(name, pet.name)
             && Objects.equals(breed, pet.breed);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age, breed, fee);
+        return Objects.hash(name, age, breed, adoptionFee);
     }
 
     public String getName() {
@@ -77,7 +77,7 @@ public class Pet {
     }
 
     public void calculateAdoptionFee() {
-        fee = 15;
+        adoptionFee = 15;
     }
 
 }

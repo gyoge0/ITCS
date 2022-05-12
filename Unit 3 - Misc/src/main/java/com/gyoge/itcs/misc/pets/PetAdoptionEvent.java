@@ -1,10 +1,11 @@
 package com.gyoge.itcs.misc.pets;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
-import java.util.Set;
+import java.util.stream.Collectors;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,8 +16,8 @@ import java.time.LocalDate;
 public class PetAdoptionEvent {
 
     private LocalDate eventDate = LocalDate.now();
-    private Set<Pet> availablePets;
-    private Set<Pet> adoptedPets;
+    private List<Pet> availablePets;
+    private List<Pet> adoptedPets;
     private int totalFees;
     private String shelterName;
 
@@ -32,19 +33,19 @@ public class PetAdoptionEvent {
         this.eventDate = eventDate;
     }
 
-    public Set<Pet> getAvailablePets() {
+    public List<Pet> getAvailablePets() {
         return availablePets;
     }
 
-    public void setAvailablePets(Set<Pet> availablePets) {
+    public void setAvailablePets(List<Pet> availablePets) {
         this.availablePets = availablePets;
     }
 
-    public Set<Pet> getAdoptedPets() {
+    public List<Pet> getAdoptedPets() {
         return adoptedPets;
     }
 
-    public void setAdoptedPets(Set<Pet> adoptedPets) {
+    public void setAdoptedPets(List<Pet> adoptedPets) {
         this.adoptedPets = adoptedPets;
     }
 
@@ -64,12 +65,16 @@ public class PetAdoptionEvent {
         this.shelterName = shelterName;
     }
 
-    public PetAdoptionEvent(Set<Pet> availablePets, Set<Pet> adoptedPets, int totalFees,
+    public PetAdoptionEvent(ArrayList<Pet> availablePets, ArrayList<Pet> adoptedPets, int totalFees,
         String shelterName) {
         this.availablePets = availablePets;
         this.adoptedPets = adoptedPets;
         this.totalFees = totalFees;
         this.shelterName = shelterName;
+    }
+
+    public PetAdoptionEvent(String name) {
+        this(new ArrayList<>(), new ArrayList<>(), 0, name);
     }
 
     /* TODO: add methods - addPet, rehomePet,
@@ -87,8 +92,8 @@ public class PetAdoptionEvent {
         availablePets.remove(pet);
         adoptedPets.add(pet);
         pet.calculateAdoptionFee();
-        totalFees += pet.getFee();
-        return pet.getFee();
+        totalFees += pet.getAdoptionFee();
+        return pet.getAdoptionFee();
     }
 
     public void displayAvailablePets() {
@@ -99,34 +104,34 @@ public class PetAdoptionEvent {
         adoptedPets.forEach(System.out::println);
     }
 
-    public List<Pet> requestCat(String furLength) {
-        return availablePets
+    public ArrayList<Pet> requestCat(String furLength) {
+        return (ArrayList<Pet>) availablePets
             .stream()
             .filter(Cat.class::isInstance)
             .map(Cat.class::cast)
             .filter(c -> c.getFurLength().equals(furLength))
             .map(Pet.class::cast)
-            .toList();
+            .collect(Collectors.toList()); // yes, only arraylists
     }
 
-    public List<Pet> requestDog(Boolean shedding) {
-        return availablePets
+    public ArrayList<Pet> requestDog(Boolean shedding) {
+        return (ArrayList<Pet>) availablePets
             .stream()
             .filter(Dog.class::isInstance)
             .map(Dog.class::cast)
             .filter(d -> d.isShedding() == shedding)
             .map(Pet.class::cast)
-            .toList();
+            .collect(Collectors.toList()); // yes, only arraylists
     }
 
-    public List<Pet> requestHamster(double speed) {
-        return availablePets
+    public ArrayList<Pet> requestHamster(double speed) {
+        return (ArrayList<Pet>) availablePets
             .stream()
             .filter(Hamster.class::isInstance)
             .map(Hamster.class::cast)
             .filter(h -> h.getSpeed() >= speed)
             .map(Pet.class::cast)
-            .toList();
+            .collect(Collectors.toList()); // yes, only arraylists
     }
 
     public Scanner getScanner(String fileName) {
@@ -136,7 +141,7 @@ public class PetAdoptionEvent {
         try {
             scan = new Scanner(myFile);
         } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + e);
+            e.printStackTrace();
             return null;
         }
 

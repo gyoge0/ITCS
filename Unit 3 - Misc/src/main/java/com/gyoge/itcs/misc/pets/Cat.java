@@ -13,7 +13,7 @@ public class Cat extends Pet {
             case "Domestic Shorthair" -> fee = 65;
         }
         fee += cuteness * 3;
-        this.fee = fee;
+        this.adoptionFee = fee;
     }
 
     /*

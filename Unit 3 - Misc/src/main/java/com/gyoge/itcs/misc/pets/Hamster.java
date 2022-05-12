@@ -19,7 +19,7 @@ public class Hamster extends Pet {
             fee += 2;
         }
 
-        this.fee = fee;
+        this.adoptionFee = fee;
 
     }
 
