@@ -18,26 +18,26 @@ public class PasswordCipher {
         List<Character> cipher = new ArrayList<>();
 
         pass
-                .toLowerCase()
-                .chars()
-                .distinct()
-                .boxed()
-                .map(c -> (char) (int) c)
-                .filter(Character::isAlphabetic)
-                .forEach(cipher::add);
+            .toLowerCase()
+            .chars()
+            .distinct()
+            .boxed()
+            .map(c -> (char) (int) c)
+            .filter(Character::isAlphabetic)
+            .forEach(cipher::add);
 
         IntStream
-                .range(97, 122)
-                .boxed()
-                .map(i -> (char) (int) i)
-                .filter(i -> !cipher.contains(i))
-                .forEach(cipher::add);
+            .range(97, 122)
+            .boxed()
+            .map(i -> (char) (int) i)
+            .filter(i -> !cipher.contains(i))
+            .forEach(cipher::add);
 
         IntStream
-                .range(97, 122)
-                .boxed()
-                .map(i -> (char) (int) i)
-                .forEach(i -> map.put(i, cipher.get(i % 97)));
+            .range(97, 122)
+            .boxed()
+            .map(i -> (char) (int) i)
+            .forEach(i -> map.put(i, cipher.get(i % 97)));
 
         return map;
 
@@ -45,30 +45,30 @@ public class PasswordCipher {
 
     public String encrypt(String plaintext) {
         return plaintext
-                .toLowerCase()
-                .chars()
-                .boxed()
-                .map(c -> (char) (int) c)
-                .map(c -> getMap().getOrDefault(c, c))
-                .map(Object::toString)
-                .collect(Collectors.joining(""));
+            .toLowerCase()
+            .chars()
+            .boxed()
+            .map(c -> (char) (int) c)
+            .map(c -> getMap().getOrDefault(c, c))
+            .map(Object::toString)
+            .collect(Collectors.joining(""));
     }
 
     public String decrypt(String ciphertext) {
         return ciphertext
-                .toLowerCase()
-                .chars()
-                .boxed()
-                .map(c -> (char) (int) c)
-                .map(c -> (
-                        getMap()
-                                .entrySet()
-                                .stream()
-                                .map(e -> Map.entry(e.getValue(), e.getKey()))
-                                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))
-                ).getOrDefault(c, c))
-                .map(Object::toString)
-                .collect(Collectors.joining(""));
+            .toLowerCase()
+            .chars()
+            .boxed()
+            .map(c -> (char) (int) c)
+            .map(c -> (
+                getMap()
+                    .entrySet()
+                    .stream()
+                    .map(e -> Map.entry(e.getValue(), e.getKey()))
+                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))
+            ).getOrDefault(c, c))
+            .map(Object::toString)
+            .collect(Collectors.joining(""));
     }
 
     public static void main(String[] args) {

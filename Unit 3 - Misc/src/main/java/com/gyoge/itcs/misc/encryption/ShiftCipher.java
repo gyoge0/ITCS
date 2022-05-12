@@ -14,41 +14,41 @@ public class ShiftCipher {
 
     public String encrypt(String plaintext) {
         return plaintext
-                .toLowerCase()
-                .chars()
-                .boxed()
-                .map(c -> (char) (int) c)
-                .map(c -> !Character.isAlphabetic(c)
-                        ? c // non-alphabetic characters are unchanged
-                        : c + shift > 'z' // is it overflowing past 'z'?
-                        ? c + shift - 26 // yes, subtract 26
-                        : c + shift < 'a' // no, is it underflowing past 'a'?
+            .toLowerCase()
+            .chars()
+            .boxed()
+            .map(c -> (char) (int) c)
+            .map(c -> !Character.isAlphabetic(c)
+                ? c // non-alphabetic characters are unchanged
+                : c + shift > 'z' // is it overflowing past 'z'?
+                    ? c + shift - 26 // yes, subtract 26
+                    : c + shift < 'a' // no, is it underflowing past 'a'?
                         ? c + shift + 26 // yes, add 26
                         : c + shift // no, it's fine
-                )
-                .map(c -> (char) (int) c)
-                .map(Object::toString)
-                .collect(Collectors.joining(""));
+            )
+            .map(c -> (char) (int) c)
+            .map(Object::toString)
+            .collect(Collectors.joining(""));
 
     }
 
     public String decrypt(String ciphertext) {
         return ciphertext
-                .toLowerCase()
-                .chars()
-                .boxed()
-                .map(c -> (char) (int) c)
-                .map(c -> !Character.isAlphabetic(c)
-                        ? c // non-alphabetic characters are unchanged
-                        : c + (-shift) > 'z' // is it overflowing past 'z'?
-                        ? c + (-shift) - 26 // yes, subtract 26
-                        : c + (-shift) < 'a' // no, is it underflowing past 'a'?
+            .toLowerCase()
+            .chars()
+            .boxed()
+            .map(c -> (char) (int) c)
+            .map(c -> !Character.isAlphabetic(c)
+                ? c // non-alphabetic characters are unchanged
+                : c + (-shift) > 'z' // is it overflowing past 'z'?
+                    ? c + (-shift) - 26 // yes, subtract 26
+                    : c + (-shift) < 'a' // no, is it underflowing past 'a'?
                         ? c + (-shift) + 26 // yes, add 26
                         : c + (-shift) // no, it's fine
-                )
-                .map(c -> (char) (int) c)
-                .map(Object::toString)
-                .collect(Collectors.joining(""));
+            )
+            .map(c -> (char) (int) c)
+            .map(Object::toString)
+            .collect(Collectors.joining(""));
     }
 
     public static void main(String[] args) {
