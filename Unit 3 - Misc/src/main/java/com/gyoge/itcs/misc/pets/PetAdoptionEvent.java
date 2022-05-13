@@ -1,6 +1,5 @@
 package com.gyoge.itcs.misc.pets;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,76 +11,15 @@ import java.io.FileNotFoundException;
 
 import java.time.LocalDate;
 
-@SuppressWarnings({"unused", "SpellCheckingInspection"})
 public class PetAdoptionEvent {
 
-    private LocalDate eventDate = LocalDate.now();
-    private List<Pet> availablePets;
-    private List<Pet> adoptedPets;
+    private final LocalDate eventDate = LocalDate.now();
+    private final List<Pet> availablePets;
+    private final List<Pet> adoptedPets;
     private int totalFees;
-    private String shelterName;
+    private final String shelterName;
 
-    /*
-    pov java
-    */
-
-    public LocalDate getEventDate() {
-        return eventDate;
-    }
-
-    public void setEventDate(LocalDate eventDate) {
-        this.eventDate = eventDate;
-    }
-
-    public List<Pet> getAvailablePets() {
-        return availablePets;
-    }
-
-    public void setAvailablePets(List<Pet> availablePets) {
-        this.availablePets = availablePets;
-    }
-
-    public List<Pet> getAdoptedPets() {
-        return adoptedPets;
-    }
-
-    public void setAdoptedPets(List<Pet> adoptedPets) {
-        this.adoptedPets = adoptedPets;
-    }
-
-    public int getTotalFees() {
-        return totalFees;
-    }
-
-    public void setTotalFees(int totalFees) {
-        this.totalFees = totalFees;
-    }
-
-    public String getShelterName() {
-        return shelterName;
-    }
-
-    public void setShelterName(String shelterName) {
-        this.shelterName = shelterName;
-    }
-
-    public PetAdoptionEvent(ArrayList<Pet> availablePets, ArrayList<Pet> adoptedPets, int totalFees,
-        String shelterName) {
-        this.availablePets = availablePets;
-        this.adoptedPets = adoptedPets;
-        this.totalFees = totalFees;
-        this.shelterName = shelterName;
-    }
-
-    public PetAdoptionEvent(String name) {
-        this(new ArrayList<>(), new ArrayList<>(), 0, name);
-    }
-
-    /* TODO: add methods - addPet, rehomePet,
-     *        displayAvailablePets, displayAdoptedPets,
-     *        requestCat, requestDog, requestHamster
-     */
-    public int rehomePet(String petName) {
+    public void rehomePet(String petName) {
         @SuppressWarnings("OptionalGetWithoutIsPresent")
         Pet pet = availablePets
             .stream()
@@ -93,7 +31,6 @@ public class PetAdoptionEvent {
         adoptedPets.add(pet);
         pet.calculateAdoptionFee();
         totalFees += pet.getAdoptionFee();
-        return pet.getAdoptionFee();
     }
 
     public void displayAvailablePets() {
@@ -233,4 +170,41 @@ public class PetAdoptionEvent {
             }
         }
     }
+
+    /*
+    pov java
+    */
+
+    public LocalDate getEventDate() {
+        return eventDate;
+    }
+
+    public List<Pet> getAvailablePets() {
+        return availablePets;
+    }
+
+    public List<Pet> getAdoptedPets() {
+        return adoptedPets;
+    }
+
+    public int getTotalFees() {
+        return totalFees;
+    }
+
+    public String getShelterName() {
+        return shelterName;
+    }
+
+    public PetAdoptionEvent(ArrayList<Pet> availablePets, ArrayList<Pet> adoptedPets, int totalFees,
+        String shelterName) {
+        this.availablePets = availablePets;
+        this.adoptedPets = adoptedPets;
+        this.totalFees = totalFees;
+        this.shelterName = shelterName;
+    }
+
+    public PetAdoptionEvent(String name) {
+        this(new ArrayList<>(), new ArrayList<>(), 0, name);
+    }
+
 }
