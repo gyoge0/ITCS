@@ -31,35 +31,6 @@ public class Hamster extends Pet {
         return eyeColor;
     }
 
-    @Override
-    public String toString() {
-        return "Hamster{" +
-            "eyeColor='" + eyeColor + '\'' +
-            ", speed=" + speed +
-            '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        if (!super.equals(o)) {
-            return false;
-        }
-        Hamster hamster = (Hamster) o;
-        return Objects.equals(eyeColor, hamster.eyeColor) && Objects.equals(speed,
-            hamster.speed);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), eyeColor, speed);
-    }
-
     public void setEyeColor(String eyeColor) {
         this.eyeColor = eyeColor;
     }
@@ -84,4 +55,35 @@ public class Hamster extends Pet {
 
     private Double speed;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        Hamster hamster = (Hamster) o;
+        return eyeColor.equals(hamster.eyeColor) && speed.equals(hamster.speed);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), eyeColor, speed);
+    }
+
+    @Override
+    public String toString() {
+        return "Hamster{" +
+            "eyeColor='" + eyeColor + '\'' +
+            ", speed=" + speed +
+            ", name='" + name + '\'' +
+            ", age=" + age +
+            ", breed='" + breed + '\'' +
+            ", adoptionFee=" + adoptionFee +
+            '}';
+    }
 }

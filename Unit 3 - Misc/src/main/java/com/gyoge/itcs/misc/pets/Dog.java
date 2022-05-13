@@ -10,7 +10,7 @@ public class Dog extends Pet {
         int fee = 0;
         switch (breed) {
             case "Beagle" -> fee = 100;
-            case "German Shepard" -> fee = 135;
+            case "German Shepherd" -> fee = 135;
         }
         fee += trainingHours * 5;
         this.adoptionFee = fee;
@@ -55,16 +55,7 @@ public class Dog extends Pet {
         this.trainingHours = trainingHours;
         this.barkVolume = Math.max(Math.max(70, barkVolume), 115);
 
-        this.trainingHours += this.breed.equals("German Shepard") ? 3 : 0;
-    }
-
-    @Override
-    public String toString() {
-        return "Dog{" +
-            "shedding=" + shedding +
-            ", trainingHours=" + trainingHours +
-            ", barkVolume=" + barkVolume +
-            '}';
+        this.trainingHours += this.breed.equals("German Shepherd") ? 3 : 0;
     }
 
     @Override
@@ -86,5 +77,18 @@ public class Dog extends Pet {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), shedding, trainingHours, barkVolume);
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+            "shedding=" + shedding +
+            ", trainingHours=" + trainingHours +
+            ", barkVolume=" + barkVolume +
+            ", name='" + name + '\'' +
+            ", age=" + age +
+            ", breed='" + breed + '\'' +
+            ", adoptionFee=" + adoptionFee +
+            '}';
     }
 }

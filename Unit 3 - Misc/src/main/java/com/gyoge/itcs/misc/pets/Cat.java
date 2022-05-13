@@ -12,6 +12,7 @@ public class Cat extends Pet {
             case "Ragamuffin" -> fee = 80;
             case "Domestic Shorthair" -> fee = 65;
         }
+        cuteness = breed.equals("Ragamuffin") ? Math.min(10, cuteness + 2) : cuteness;
         fee += cuteness * 3;
         this.adoptionFee = fee;
     }
@@ -29,35 +30,6 @@ public class Cat extends Pet {
     public void setCuteness(int cuteness) {
         this.cuteness = cuteness;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        if (!super.equals(o)) {
-            return false;
-        }
-        Cat cat = (Cat) o;
-        return cuteness == cat.cuteness && Objects.equals(furLength, cat.furLength);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), furLength, cuteness);
-    }
-
-    @Override
-    public String toString() {
-        return "Cat{" +
-            "furLength='" + furLength + '\'' +
-            ", cuteness=" + cuteness +
-            '}';
-    }
-
     private int cuteness;
 
     public String getFurLength() {
@@ -77,5 +49,35 @@ public class Cat extends Pet {
         cuteness = Math.min(age, 10);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        Cat cat = (Cat) o;
+        return cuteness == cat.cuteness && furLength.equals(cat.furLength);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), furLength, cuteness);
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+            "furLength='" + furLength + '\'' +
+            ", cuteness=" + cuteness +
+            ", name='" + name + '\'' +
+            ", age=" + age +
+            ", breed='" + breed + '\'' +
+            ", adoptionFee=" + adoptionFee +
+            '}';
+    }
 }

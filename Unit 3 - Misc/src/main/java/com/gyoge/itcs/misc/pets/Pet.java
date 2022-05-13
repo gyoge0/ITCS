@@ -14,6 +14,7 @@ public class Pet {
     public int getAdoptionFee() {
         return adoptionFee;
     }
+
     /*
     pov java
     */
@@ -29,35 +30,6 @@ public class Pet {
     public void setBreed(String breed) {
         this.breed = breed;
     }
-
-    @Override
-    public String toString() {
-        return "Pet{" +
-            "name='" + name + '\'' +
-            ", age=" + age +
-            ", breed='" + breed + '\'' +
-            ", fee=" + adoptionFee +
-            '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Pet pet = (Pet) o;
-        return age == pet.age && adoptionFee == pet.adoptionFee && Objects.equals(name, pet.name)
-            && Objects.equals(breed, pet.breed);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, age, breed, adoptionFee);
-    }
-
     public String getName() {
         return name;
     }
@@ -80,4 +52,31 @@ public class Pet {
         adoptionFee = 15;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Pet pet = (Pet) o;
+        return age == pet.age && adoptionFee == pet.adoptionFee && name.equals(pet.name)
+            && breed.equals(pet.breed);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, breed, adoptionFee);
+    }
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+            "name='" + name + '\'' +
+            ", age=" + age +
+            ", breed='" + breed + '\'' +
+            ", adoptionFee=" + adoptionFee +
+            '}';
+    }
 }
