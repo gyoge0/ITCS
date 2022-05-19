@@ -2,7 +2,7 @@ import math  # math isn't imported by default
 import matplotlib.pyplot as plt
 
 # constants
-# convetion is all caps name at top of file
+# convention is all caps name at top of file
 AX = 0
 DT = 0.02
 
@@ -89,7 +89,7 @@ calculate_projectile()
 def optimal_angle():
     best, ang = -1, -1
     for angle in range(90):
-        # its enefficient, but our computers are powerful enough to do this
+        # its inefficient, but our computers are powerful enough to do this
         x = _calculate_points(angle)[-1][0]
 
         if x > best:

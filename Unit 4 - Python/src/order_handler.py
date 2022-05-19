@@ -44,7 +44,7 @@ class OrderHandler:
         # working with files is super easy in python
         # you may or may not have the same file path on your computer
         with open(f"../resources/Sales/{file_name}.txt", "r") as f:
-            # 2 new lines seperate each order. .read() reads the string in
+            # 2 new lines separate each order. .read() reads the string in
             # the file, .split() splits the string by every 2 new lines
             for order in f.read().split("\n\n"):
                 # gets each line of the order in a list
