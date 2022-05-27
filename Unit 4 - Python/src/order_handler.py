@@ -1,84 +1,57 @@
-class Order:
-    def __init__(
-            self,
-            client_name: str,
-            item_names: list[str],
-            item_quantities: list[int]
+import aiohttp
+import asyncio
+
+
+async def get_files(name: str):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(f"https://leff-itcs.s3.amazonaws.com/{name}") as resp:
+            return await resp.text()
+
+
+def _main():
+    name = None
+    while name not in (
+        "AprilSales.txt",
+        "MaySales.txt",
+        "JuneSales.txt",
+        "JulySales.txt",
     ):
-        self.client_name = client_name
+        name = input("Enter name of file (include.txt extension): ")
 
-        # store them as pairs in the dictionary AKA HashMap
-        self.order_info = {
-            name: amount for name, amount in zip(item_names, item_quantities)
-        }
+    text = asyncio.run(get_files(name))
+    orders = text.replace("\r", "\n")
+    orders = orders.split("\n\n\n")
+    orders = orders[:-1]
+    orders = list(map(lambda x: x.split("\n\n")[1:], orders))
+    orders = [item for order in orders for item in order]
+    orders = zip(orders[::2], orders[1::2])
+    items = {
+        "Sweet Potato": 0.00,
+        "Idaho Potato": 0.00,
+        "Squash": 0.00,
+        "Tomato": 0.00,
+        "Green Beans": 0.00,
+    }
 
-    def calculate_revenue(self) -> float:
-        # quick lookup table for the prices
-        prices = {
-            "Sweet Potato": 0.5,
-            "Idaho Potato": 0.4,
-            "Squash": 0.75,
-            "Tomato": 0.3,
-            "Green Beans": 0.45,
-        }
+    for item, amount in orders:
+        items[item] += int(amount)
 
-        total = 0
-        for name, amount in self.order_info.items():
-            total += prices[name] * amount
+    costs = {
+        "Sweet Potato": 0.50,
+        "Idaho Potato": 0.40,
+        "Squash": 0.75,
+        "Tomato": 0.30,
+        "Green Beans": 0.45,
+    }
 
-        return total
-
-    def display_order(self):
-        print(self.client_name)
-        for name, amount in self.order_info.items():
-            print(f"{amount} {name}")  # formatted string
-
-
-class OrderHandler:
-    # __init__ method is a python constructor. You can only have 1 per class.
-    def __init__(self):
-        self.orders = []
-
-    def read_file(self, file_name: str):
-        # this creates a file object named "f"
-        # working with files is super easy in python
-        # you may or may not have the same file path on your computer
-        with open(f"../resources/Sales/{file_name}.txt", "r") as f:
-            # 2 new lines separate each order. .read() reads the string in
-            # the file, .split() splits the string by every 2 new lines
-            for order in f.read().split("\n\n"):
-                # gets each line of the order in a list
-                order = order.split("\n")
-
-                # This removes and returns the first element in the array
-                client_name = order.pop(0)
-
-                # makes 2 lists, which alternate the elements from order
-                names, counts = order[::2], order[1::2]
-
-                counts = list(map(int, counts))  # converts the amounts to ints
-                self.orders.append(Order(client_name, names, counts))
-
-    def display_orders(self):
-        for order in self.orders:
-            order.display_order()
-            print()  # new line
-
-    def calculate_total_revenue(self):
-        total = 0
-        for order in self.orders:
-            total += order.calculate_revenue()
-        return total
+    print("\nTotal items to be delivered:")
+    for item in items:
+        print(f"{item}: {items[item]:.0f}")
+        items[item] = items[item] * costs[item]
+    print("\nTotal Revenue:")
+    print(sum(items.values()))
 
 
-# this would be in our main method if this was in java
-test_handler = OrderHandler()
-
-# input() prints a line and returns the next entered line
-name = input("Which file should be read? (do not include .txt extension)\n")
-test_handler.read_file(name)
-
-print("\nOrders Read:")
-test_handler.display_orders()
-
-print(test_handler.calculate_total_revenue())
+if __name__ == "__main__":
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    _main()
